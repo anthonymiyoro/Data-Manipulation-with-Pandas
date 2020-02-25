@@ -1,5 +1,5 @@
-# pandasTipsAndTricks
-Tips and tricks when woring with pandas
+## pandasTipsAndTricks
+Tips and tricks when working with pandas
 
 ### Append values to dataframe column while looping through it
 https://stackoverflow.com/a/47604317/4861086
