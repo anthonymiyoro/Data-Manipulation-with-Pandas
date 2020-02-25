@@ -1,5 +1,8 @@
-## pandasTipsAndTricks
+# pandasTipsAndTricks
 Tips and tricks when working with pandas
+
+## Working with SQL
+https://blog.hubspot.com/marketing/sql-tutorial-introduction
 
 ### Append values to dataframe column while looping through it
 https://stackoverflow.com/a/47604317/4861086
