@@ -1,7 +1,7 @@
 # pandasTipsAndTricks
 Tips and tricks when working with pandas
 
-## Working with SQL
+### SQL Basics
 https://blog.hubspot.com/marketing/sql-tutorial-introduction
 
 ### Append values to dataframe column while looping through it
