@@ -23,7 +23,7 @@ pd.to_datetime(df.col2, errors='coerce')
 ### Check datatype python pandas
 
 ```
-if isinstance(VARIABLE, float)
+if isinstance(VARIABLE, float):
 ```
 
 ### Loop through each row in dataframe pandas
