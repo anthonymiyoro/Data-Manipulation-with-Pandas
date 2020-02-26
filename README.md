@@ -36,3 +36,10 @@ for item in df.itertuples():
     print(item.a, item.b)
 
 ```
+
+### Drop Multiple columns in dataframe pandas
+https://cmdlinetips.com/2018/04/how-to-drop-one-or-more-columns-in-pandas-dataframe/
+```
+# pandas drop columns using list of column names
+gapminder_ocean.drop(['pop', 'gdpPercap', 'continent'], axis=1)
+```
