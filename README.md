@@ -43,3 +43,11 @@ https://cmdlinetips.com/2018/04/how-to-drop-one-or-more-columns-in-pandas-datafr
 # pandas drop columns using list of column names
 gapminder_ocean.drop(['pop', 'gdpPercap', 'continent'], axis=1)
 ```
+
+### Aggregrate multiple rows by date Pandas
+https://stackoverflow.com/questions/50569899/pandas-how-to-group-by-multiple-columns-and-perform-different-aggregations-on-m
+```
+# Aggregrate by delivery date, product name and its SKU, get the median selling price and gross profit
+aggregation = {'selling_price':  'median', 'Weight': 'sum', 'gross_profit':  'median'}
+new_df = vendor_drops.groupby(['delivery_date','product_name','product_item_name'], as_index=False).agg(aggregation)
+```
