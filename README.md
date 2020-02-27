@@ -51,3 +51,24 @@ https://stackoverflow.com/questions/50569899/pandas-how-to-group-by-multiple-col
 aggregation = {'selling_price':  'median', 'Weight': 'sum', 'gross_profit':  'median'}
 new_df = vendor_drops.groupby(['delivery_date','product_name','product_item_name'], as_index=False).agg(aggregation)
 ```
+### Draw a heatmap SNS seaborn pandas python
+```
+plt.figure(figsize = (13,10))
+sns.heatmap(corr_df, annot=True)
+plt.savefig('ajab_corr_heatmap.png')
+```
+
+### Plot linear regression correlation between 2 dfferent values
+```
+sns.pairplot(vendor_drops, kind='reg', height=10, x_vars=['selling_price'], y_vars=['gross_profit'])
+```
+OR
+```
+plt.figure(figsize = (10,7))
+sns.regplot(data = vendor_drops , x=vendor_drops['selling_price'], y=vendor_drops['gross_profit'])
+```
+
+### Export dataset pandas
+```
+new_df.to_excel("ajab_bananas.xlsx")  
+```
