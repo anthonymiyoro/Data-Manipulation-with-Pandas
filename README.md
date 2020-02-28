@@ -4,6 +4,26 @@ Tips and tricks when working with pandas
 ### SQL Basics
 https://blog.hubspot.com/marketing/sql-tutorial-introduction
 
+```
+SELECT
+  *
+FROM `twigadms.dmslive.cache_finance_deliveries`
+WHERE
+  product_name in(
+    'Ajab home baking flour',
+    'Biryani Rice',
+    'Dairy Top UHT Milk',
+    'Watermelon',
+    'Tomatoes',
+    'Bananas',
+    'Potatoes'
+  )
+  AND delivery_date BETWEEN '2019-11-01'
+  AND '2020-02-15'
+LIMIT
+  10000;
+```
+
 ### Append values to dataframe column while looping through it
 https://stackoverflow.com/a/47604317/4861086
 
