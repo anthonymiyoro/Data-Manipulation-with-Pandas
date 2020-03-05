@@ -74,6 +74,8 @@ banana_drops = agg_banana_df.groupby(['delivery_date']).agg(
     number_of_unique_customers=('Unique_Stalls', pd.Series.nunique),
     number_of_drops=('number_of_drops', np.average)
     )
+    
+banana_drops = banana_drops.reset_index()
 ```
 ### Draw a heatmap SNS seaborn pandas python
 ```
@@ -131,6 +133,8 @@ banana_drops = agg_banana_df.groupby(['delivery_date']).agg(
     number_of_unique_customers=('Unique_Stalls', pd.Series.nunique),
     number_of_drops=('number_of_drops', np.average)
     )
+    
+banana_drops = banana_drops.reset_index()
 ```
 
 ### Plot correlation heatmap pandas python 
