@@ -24,6 +24,12 @@ LIMIT
   10000;
 ```
 
+### Find all rows that match criteria and create new dataframe from it Pandas, Python
+```
+new_df = old_df[old_df.column_name == 'Biryani Rice']
+milk_vendor_drops.head(5)
+```
+
 ### Append values to dataframe column while looping through it
 https://stackoverflow.com/a/47604317/4861086
 
