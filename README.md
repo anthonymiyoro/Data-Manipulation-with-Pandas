@@ -25,6 +25,7 @@ LIMIT
 ```
 
 ### Find all rows that match criteria and create new dataframe from it Pandas, Python
+https://stackoverflow.com/questions/51004029/create-a-new-dataframe-based-on-rows-with-a-certain-value
 ```
 new_df = old_df[old_df.column_name == 'Biryani Rice']
 milk_vendor_drops.head(5)
