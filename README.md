@@ -31,6 +31,15 @@ new_df = old_df[old_df.column_name == 'Biryani Rice']
 milk_vendor_drops.head(5)
 ```
 
+### Plot Lineatr Regression Seaborn Pandas
+https://seaborn.pydata.org/examples/regression_marginals.html
+```
+sns.jointplot("average_selling_price", "volumes_sold", data=milk_vendor_drops,
+                  kind="reg", truncate=False,
+                  color="m", height=7)
+plt.title('Basmati Rice', y=5, fontsize = 16)
+```
+
 ### Append values to dataframe column while looping through it
 https://stackoverflow.com/a/47604317/4861086
 
