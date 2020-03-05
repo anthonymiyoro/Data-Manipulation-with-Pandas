@@ -86,6 +86,9 @@ banana_drops = banana_drops.reset_index()
 ```
 ### Draw a heatmap SNS seaborn pandas python
 ```
+corr_df = vendor_drops.corr()
+corr_df.to_excel('3_FFV_matrix.xlsx')
+
 plt.figure(figsize = (13,10))
 sns.heatmap(corr_df, annot=True)
 plt.savefig('ajab_corr_heatmap.png')
