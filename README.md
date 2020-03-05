@@ -67,9 +67,13 @@ gapminder_ocean.drop(['pop', 'gdpPercap', 'continent'], axis=1)
 ### Aggregrate multiple rows by date Pandas
 https://stackoverflow.com/questions/50569899/pandas-how-to-group-by-multiple-columns-and-perform-different-aggregations-on-m
 ```
-# Aggregrate by delivery date, product name and its SKU, get the median selling price and gross profit
-aggregation = {'selling_price':  'median', 'Weight': 'sum', 'gross_profit':  'median'}
-new_df = vendor_drops.groupby(['delivery_date','product_name','product_item_name'], as_index=False).agg(aggregation)
+banana_drops = agg_banana_df.groupby(['delivery_date']).agg(
+    total_volumes_sold=('Weight', sum),
+    avg_drop_size=('dropsize', np.average),
+    median_drop_size=('dropsize', np.median),
+    number_of_unique_customers=('Unique_Stalls', pd.Series.nunique),
+    number_of_drops=('number_of_drops', np.average)
+    )
 ```
 ### Draw a heatmap SNS seaborn pandas python
 ```
