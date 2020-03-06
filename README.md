@@ -31,6 +31,12 @@ new_df = old_df[old_df.column_name == 'Biryani Rice']
 milk_vendor_drops.head(5)
 ```
 
+### Delete Pandas dataframe column
+https://stackoverflow.com/questions/13411544/delete-column-from-pandas-dataframe
+```
+del df['column_name']
+```
+
 ### Plot Lineatr Regression Seaborn Pandas
 https://seaborn.pydata.org/examples/regression_marginals.html
 ```
