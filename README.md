@@ -147,16 +147,12 @@ agg_banana_df.head(5)
 _ih[-10:]
 ```
 
-### Pandas Group By Aggregate on distinct count
+### Pandas Group By Aggregate on distinct count or unique count
 
 https://stackoverflow.com/questions/18554920/pandas-aggregate-count-distinct
 ```
 banana_drops = agg_banana_df.groupby(['delivery_date']).agg(
-    total_volumes_sold=('Weight', sum),
-    avg_drop_size=('dropsize', np.average),
-    median_drop_size=('dropsize', np.median),
-    number_of_unique_customers=('Unique_Stalls', pd.Series.nunique),
-    number_of_drops=('number_of_drops', np.average)
+    number_of_unique_customers=('Unique_Stalls', pd.Series.nunique)
     )
     
 banana_drops = banana_drops.reset_index()
