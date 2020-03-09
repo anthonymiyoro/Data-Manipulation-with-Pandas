@@ -161,6 +161,16 @@ banana_drops = agg_banana_df.groupby(['delivery_date', 'order_date']).agg(
 banana_drops = banana_drops.reset_index()
 
 ```
+### Replace NaN with 0s
+```
+DataFrame.fillna()
+```
+
+### Create new blank dataframe
+https://www.geeksforgeeks.org/adding-new-column-to-existing-dataframe-in-pandas/
+```
+df['Total Sales'] = ''
+```
 
 ### Plot correlation heatmap pandas python 
 
