@@ -154,11 +154,12 @@ _ih[-10:]
 
 https://stackoverflow.com/questions/18554920/pandas-aggregate-count-distinct
 ```
-banana_drops = agg_banana_df.groupby(['delivery_date']).agg(
+banana_drops = agg_banana_df.groupby(['delivery_date', 'order_date']).agg(
     number_of_unique_customers=('Unique_Stalls', pd.Series.nunique)
     )
     
 banana_drops = banana_drops.reset_index()
+
 ```
 
 ### Plot correlation heatmap pandas python 
