@@ -24,6 +24,9 @@ LIMIT
   10000;
 ```
 
+### Create custom Maps with CSV Google
+https://webapps.stackexchange.com/a/102780
+
 ### Find all rows that match criteria and create new dataframe from it Pandas, Python
 https://stackoverflow.com/questions/51004029/create-a-new-dataframe-based-on-rows-with-a-certain-value
 ```
