@@ -197,4 +197,31 @@ del new_df['in_old_df']
 
 ```
 
+### Pivot Pandas dataframe
 
+```
+    foo   bar  baz  zoo
+0   one   A    1    x
+1   one   B    2    y
+2   one   C    3    z
+3   two   A    4    q
+4   two   B    5    w
+5   two   C    6    t
+
+
+df.pivot(index='foo', columns='bar', values='baz')
+
+bar  A   B   C
+foo
+one  1   2   3
+two  4   5   6
+```
+- When there is a Multi-Indexed dataframe, reset the index first with
+```
+df = df.reset_index()
+```
+
+### Fill in Nan with 0
+```
+df.fillna(0)
+```
