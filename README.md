@@ -24,6 +24,25 @@ LIMIT
   10000;
 ```
 
+### Error: Pandas unstack problems: ValueError: Index contains duplicate entries, cannot reshape
+
+- Create MultiIndex Dataframe
+- Or group by again
+- Reset the index
+- Try get the Pivot again
+
+### Sum everything in a row
+https://stackoverflow.com/a/25748826
+```
+df['e'] = df.sum(axis=1)
+```
+
+### Convert DateTime Column to Days of the Week
+https://stackoverflow.com/questions/30222533/create-a-day-of-week-column-in-a-pandas-dataframe-using-python
+```
+df['day_of_week'] = df['my_dates'].dt.day_name()
+```
+
 ### Create custom Maps with CSV Google
 https://webapps.stackexchange.com/a/102780
 
