@@ -88,9 +88,9 @@ https://stackoverflow.com/a/47604317/4861086
 ```
 for row in df.itertuples():
     if <something>:
-        df.at[row.Index, 'ifor'] = x
+        df.at[row.Index, 'column_name'] = x
     else:
-        df.at[row.Index, 'ifor'] = x
+        df.at[row.Index, 'column_name'] = x
 
     df.loc[row.Index, 'ifor'] = x
 ```
