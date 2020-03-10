@@ -24,6 +24,20 @@ LIMIT
   10000;
 ```
 
+### Count number of weekdays in a week 
+https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.busday_count.html
+```
+>>> # Number of weekdays in January 2011
+... np.busday_count('2011-01', '2011-02')
+21
+>>> # Number of weekdays in 2011
+...  np.busday_count('2011', '2012')
+260
+>>> # Number of Saturdays in 2011
+... np.busday_count('2011', '2012', weekmask='Sat')
+53
+```
+
 ### Error: Pandas unstack problems: ValueError: Index contains duplicate entries, cannot reshape
 
 - Create MultiIndex Dataframe
