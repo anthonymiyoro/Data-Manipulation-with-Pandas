@@ -37,7 +37,9 @@ https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.busday_count.h
 ... np.busday_count('2011', '2012', weekmask='Sat')
 53
 ```
+
 ### Get number of distinct weeks over whoch something occured weeks
+https://stackoverflow.com/questions/31181295/converting-a-pandas-date-to-week-number
 - Get the number of weeks indivdually from which something occured
 ```
 df['Week_Number'] = df['delivery_date'].dt.week
