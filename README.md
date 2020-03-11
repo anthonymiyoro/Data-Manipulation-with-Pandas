@@ -45,6 +45,18 @@ https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.busday_count.h
 - Reset the index
 - Try get the Pivot again
 
+### Select rows whose column equals a certain value
+https://stackoverflow.com/questions/17071871/how-to-select-rows-from-a-dataframe-based-on-column-values
+```
+df.loc[df['column_name'] == some_value]
+```
+
+### Create new dataframe based on certain row values
+https://stackoverflow.com/questions/17071871/how-to-select-rows-from-a-dataframe-based-on-column-values
+```
+df = df.loc[(df['column_name'] >= A) & (df['column_name'] <= B)]
+```
+
 ### Sum everything in a row
 https://stackoverflow.com/a/25748826
 ```
