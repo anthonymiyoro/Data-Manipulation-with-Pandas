@@ -51,10 +51,14 @@ https://stackoverflow.com/questions/17071871/how-to-select-rows-from-a-dataframe
 df.loc[df['column_name'] == some_value]
 ```
 
+
 ### Create new dataframe based on certain row values
 https://stackoverflow.com/questions/17071871/how-to-select-rows-from-a-dataframe-based-on-column-values
 ```
 df = df.loc[(df['column_name'] >= A) & (df['column_name'] <= B)]
+
+df = deliveries_df.loc[deliveries_df['delivery_date'] < deliveries_df['loan_startdate']]
+
 ```
 
 ### Sum everything in a row
