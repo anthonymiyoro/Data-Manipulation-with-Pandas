@@ -37,6 +37,20 @@ https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.busday_count.h
 ... np.busday_count('2011', '2012', weekmask='Sat')
 53
 ```
+### Get number of distinct weeks over whoch something occured weeks
+- Get the number of weeks indivdually from which something occured
+```
+df['Week_Number'] = df['delivery_date'].dt.week
+```
+- Aggregate the week number distinctly when grouping by
+```
+df = df.groupby(['Unique_Stalls']).agg(
+    distinct_number_of_weeks=('Week_Number', pd.Series.nunique),
+    distinct_deliveries=('delivery_id', pd.Series.nunique)
+    )
+    
+df = df.reset_index()
+```
 
 ### Error: Pandas unstack problems: ValueError: Index contains duplicate entries, cannot reshape
 
