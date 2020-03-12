@@ -38,6 +38,13 @@ https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.busday_count.h
 53
 ```
 
+### Create new empty column from each value in column
+```
+for row in df.itertuples():
+    print(row.column_name)
+    df[row.column_name] = ""
+```
+
 ### Get number of distinct weeks over whoch something occured weeks
 https://stackoverflow.com/questions/31181295/converting-a-pandas-date-to-week-number
 - Get the number of weeks indivdually from which something occured
