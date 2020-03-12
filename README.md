@@ -143,7 +143,7 @@ if isinstance(VARIABLE, float):
 https://stackoverflow.com/a/45716191/4861086
 ```
 for item in df.itertuples():
-    print(item.a, item.b)
+    print(item.column_name, item.column_name)
 
 ```
 
