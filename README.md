@@ -1,5 +1,5 @@
 # pandasTipsAndTricks
-Tips and tricks when working with pandas
+Tips and tricks when using data manipulation in Pandas
 
 ### SQL Basics
 https://blog.hubspot.com/marketing/sql-tutorial-introduction
@@ -28,8 +28,20 @@ LIMIT
 https://stackoverflow.com/questions/36921951/truth-value-of-a-series-is-ambiguous-use-a-empty-a-bool-a-item-a-any-o
 
 Replace *and* or *or* with *&* and *|* respectively. This typically happens when searching with multiple operands.
+
 ```
  result = result[(result['var']>0.25) or (result['var']<-0.25)]
+```
+
+### Filter for time or date when using a datetime column
+https://stackoverflow.com/questions/40192704/filter-pandas-dataframe-for-past-x-days
+
+```
+import datetime
+import pandas as pd 
+
+
+df = df[(df.delivery_date < df.loan_startdate) & (df.delivery_date > (pd.to_datetime(df.loan_startdate) - pd.to_timedelta("30day")))]
 ```
 
 
