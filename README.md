@@ -24,6 +24,16 @@ LIMIT
   10000;
 ```
 
+### Pandas error: Truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all()
+https://stackoverflow.com/questions/36921951/truth-value-of-a-series-is-ambiguous-use-a-empty-a-bool-a-item-a-any-o
+
+Replace *and* or *or* with *&* and *|* respectively. This typically happens when searching with multiple operands.
+```
+ result = result[(result['var']>0.25) or (result['var']<-0.25)]
+```
+
+
+
 ### Count number of weekdays in a week 
 https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.busday_count.html
 ```
