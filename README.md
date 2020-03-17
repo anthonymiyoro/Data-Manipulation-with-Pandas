@@ -33,11 +33,19 @@ Replace *and* or *or* with *&* and *|* respectively. This typically happens when
  result = result[(result['var']>0.25) or (result['var']<-0.25)]
 ```
 
-### Provide list of items while aggregating
+### Provide list or concatenation of items while aggregating
 
 ```
 df = df.groupby(['column_1', 'column_2']).agg(
     delivery_items=('column_3', list)
+    )
+
+df = df.reset_index()
+
+##############  or  ##########
+
+df = df.groupby(['column_1', 'column_2']).agg(
+    delivery_items=('column_3', sum)
     )
 
 df = df.reset_index()
