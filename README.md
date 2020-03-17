@@ -33,7 +33,12 @@ Replace *and* or *or* with *&* and *|* respectively. This typically happens when
  result = result[(result['var']>0.25) or (result['var']<-0.25)]
 ```
 
-### Provide list or concatenation of items while aggregating
+
+### Count number of occurences when grouping by pandas
+
+
+
+### Provide list or concatenation of items while aggregating group by Pandas
 
 ```
 df = df.groupby(['column_1', 'column_2']).agg(
@@ -243,6 +248,40 @@ new_df.to_excel("ajab_bananas.xlsx")
 ### Build a Price Elasticity model
 
 https://datafai.com/2017/11/30/price-elasticity-of-demand/
+
+
+### Merge dataframes
+https://www.shanelynn.ie/merge-join-dataframes-python-pandas-index-1/
+```
+(df1)
+ 	product_name 	number_of_purchases
+0 	Afia Mango 	180
+1 	Afia Mixed Fruit 	107
+2 	Afia Multi-Vitamin 	15
+3 	Afia Orange 	4
+4 	Afia Tropical 	3
+
+(df2)
+	product_name 	total_weight_per_product 	total_amount_per_product
+0 	Afia Mango 	872.4 	102950.0
+1 	Afia Mixed Fruit 	520.8 	61620.0
+2 	Afia Multi-Vitamin 	73.2 	8500.0
+3 	Afia Orange 	14.4 	1790.0
+4 	Afia Tropical 	21.6 	2420.0
+
+
+result_df = df_1.merge(df_2, left_on='product_name', right_on='product_name')
+result_df.head(5)
+
+
+	product_name 	number_of_purchases 	total_weight_per_product 	total_amount_per_product
+0 	Afia Mango 	180 	872.4 	102950.0
+1 	Afia Mixed Fruit 	107 	520.8 	61620.0
+2 	Afia Multi-Vitamin 	15 	73.2 	8500.0
+3 	Afia Orange 	4 	14.4 	1790.0
+4 	Afia Tropical 	3 	21.6 	2420.0
+
+```
 
 ### Calculate number of occurences before aggregating
 
