@@ -143,6 +143,7 @@ df.rename(columns={"A": "a", "B": "c"})
 ```
 
 ### Top 10 items based on column value Pandas 
+https://cmdlinetips.com/2019/03/how-to-select-top-n-rows-with-the-largest-values-in-a-columns-in-pandas/
 ```
 df.nsmallest(3,'column1')
 
