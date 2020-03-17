@@ -136,6 +136,19 @@ https://stackoverflow.com/a/25748826
 df['e'] = df.sum(axis=1)
 ```
 
+### Rename Column Pandas
+https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rename.html
+```
+df.rename(columns={"A": "a", "B": "c"})
+```
+
+### Top 10 items based on column value Pandas 
+```
+df.nsmallest(3,'column1')
+
+df.nlargest(10,'column1')
+```
+
 ### Convert DateTime Column to Days of the Week
 https://stackoverflow.com/questions/30222533/create-a-day-of-week-column-in-a-pandas-dataframe-using-python
 ```
