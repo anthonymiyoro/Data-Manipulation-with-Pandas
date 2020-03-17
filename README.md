@@ -33,6 +33,17 @@ Replace *and* or *or* with *&* and *|* respectively. This typically happens when
  result = result[(result['var']>0.25) or (result['var']<-0.25)]
 ```
 
+### Provide list of items while aggregating
+
+```
+df = df.groupby(['column_1', 'column_2']).agg(
+    delivery_items=('column_3', list)
+    )
+
+df = df.reset_index()
+```
+
+
 ### Filter for time or date when using a datetime column
 https://stackoverflow.com/questions/40192704/filter-pandas-dataframe-for-past-x-days
 
