@@ -56,6 +56,15 @@ df = df.groupby(['column_1', 'column_2']).agg(
 df = df.reset_index()
 ```
 
+### Count number of occurences of items in Pandas dataframe and append with other data
+https://stackoverflow.com/a/48770057
+```
+df_1 = df.groupby(['product_name']).size()
+df_1 = df_1.reset_index()
+
+df = df_1.merge(df, left_on='product_name', right_on='product_name')
+```
+
 
 ### Filter for time or date when using a datetime column
 https://stackoverflow.com/questions/40192704/filter-pandas-dataframe-for-past-x-days
