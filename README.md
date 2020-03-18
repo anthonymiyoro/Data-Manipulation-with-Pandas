@@ -59,7 +59,7 @@ df = df.reset_index()
 ```
 
 ### Count number of occurences of items in Pandas dataframe and append with other data
-https://stackoverflow.com/a/48770057
+https://stackoverflow.com/a/55828762
 ```
 df_1 = df.groupby(['product_name']).size()
 df_1 = df_1.reset_index()
