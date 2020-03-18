@@ -31,6 +31,8 @@ Replace *and* or *or* with *&* and *|* respectively. This typically happens when
 
 ```
  result = result[(result['var']>0.25) or (result['var']<-0.25)]
+ 
+ result = result[(result['var']>0.25) and (result['var']<-0.25)]
 ```
 
 
