@@ -192,7 +192,7 @@ sns.jointplot("average_selling_price", "volumes_sold", data=milk_vendor_drops,
 plt.title('Basmati Rice', y=5, fontsize = 16)
 ```
 
-### Append values to dataframe column while looping through it
+### Append values to dataframe column while looping through it / Amend values in dataframe while looping 
 https://stackoverflow.com/a/47604317/4861086
 
 ```
