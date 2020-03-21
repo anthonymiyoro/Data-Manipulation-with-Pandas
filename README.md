@@ -203,6 +203,9 @@ for row in df.itertuples():
         df.at[row.Index, 'column_name'] = x
 
     df.loc[row.Index, 'ifor'] = x
+    
+for row in df.itertuples():
+    if row.column_name:
 ```
 
 ### Convert Pandas Column to datetime
