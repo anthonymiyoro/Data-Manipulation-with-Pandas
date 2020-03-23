@@ -35,12 +35,20 @@ Replace *and* or *or* with *&* and *|* respectively. This typically happens when
  result = result[(result['var']>0.25) and (result['var']<-0.25)]
 ```
 
+### Delete Pandas row based on conditon dataframe
+```
+df.drop(df[df.score < 50].index, inplace=True)
+
+df = df.drop(df[(df.score < 50) & (df.score > 20)].index)
+```
+
 
 ### Add calculated column Pandas Dataframe
 
 
 
 ### Provide list or concatenation of items while aggregating group by Pandas
+https://stackoverflow.com/a/27360130
 
 ```
 df = df.groupby(['column_1', 'column_2']).agg(
