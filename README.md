@@ -25,6 +25,14 @@ LIMIT
 ```
 
 
+### Infinity produced when calculating average
+- Remove all 0s from a column that is undergoing calculations
+
+```
+# Remove 0s from dataframe
+df = df[(df != 0).all(1)]
+```
+
 
 ### Pandas error: Truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all()
 https://stackoverflow.com/questions/36921951/truth-value-of-a-series-is-ambiguous-use-a-empty-a-bool-a-item-a-any-o
