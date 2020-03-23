@@ -24,6 +24,8 @@ LIMIT
   10000;
 ```
 
+
+
 ### Pandas error: Truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all()
 https://stackoverflow.com/questions/36921951/truth-value-of-a-series-is-ambiguous-use-a-empty-a-bool-a-item-a-any-o
 
@@ -35,12 +37,15 @@ Replace *and* or *or* with *&* and *|* respectively. This typically happens when
  result = result[(result['var']>0.25) and (result['var']<-0.25)]
 ```
 
+
+
 ### Delete Pandas row based on conditon dataframe
 ```
 df.drop(df[df.score < 50].index, inplace=True)
 
 df = df.drop(df[(df.score < 50) & (df.score > 20)].index)
 ```
+
 
 
 ### Add calculated column Pandas Dataframe
@@ -55,6 +60,8 @@ for row in df.itertuples():
     banana_dr_amount = df.at[row.Index, 'amount']
     df.at[row.Index, 'price_per_KG'] = (banana_dr_amount/banana_dr_quantity)
 ```
+
+
 
 ### Provide list or concatenation of items while aggregating group by Pandas
 https://stackoverflow.com/a/27360130
@@ -75,6 +82,9 @@ df = df.groupby(['column_1', 'column_2']).agg(
 df = df.reset_index()
 ```
 
+
+
+
 ### Count number of occurences of items in Pandas dataframe and append with other data
 https://stackoverflow.com/a/55828762
 ```
@@ -83,6 +93,8 @@ df_1 = df_1.reset_index()
 
 df = df_1.merge(df, left_on='product_name', right_on='product_name')
 ```
+
+
 
 
 ### Filter for time or date when using a datetime column
@@ -95,6 +107,7 @@ import pandas as pd
 
 df = df[(df.delivery_date < df.loan_startdate) & (df.delivery_date > (pd.to_datetime(df.loan_startdate) - pd.to_timedelta("30day")))]
 ```
+
 
 
 
@@ -112,12 +125,18 @@ https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.busday_count.h
 53
 ```
 
+
+
+
 ### Create new empty column from each value in column
 ```
 for row in df.itertuples():
     print(row.column_name)
     df[row.column_name] = ""
 ```
+
+
+
 
 ### Get number of distinct weeks over whoch something occured weeks
 https://stackoverflow.com/questions/31181295/converting-a-pandas-date-to-week-number
@@ -134,6 +153,9 @@ df = df.groupby(['Unique_Stalls']).agg(
     
 df = df.reset_index()
 ```
+
+
+
 
 ### Error: Pandas unstack problems: ValueError: Index contains duplicate entries, cannot reshape
 
