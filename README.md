@@ -36,7 +36,7 @@ Replace *and* or *or* with *&* and *|* respectively. This typically happens when
 ```
 
 
-### Count number of occurences when grouping by pandas
+### Add calculated column Pandas Dataframe
 
 
 
@@ -349,7 +349,14 @@ DataFrame.fillna()
 ### Create new blank dataframe
 https://www.geeksforgeeks.org/adding-new-column-to-existing-dataframe-in-pandas/
 ```
-df['Total Sales'] = ''
+# Create new column
+df['new_clolumn] = ''
+
+# Loop through dataframe appending to calculated column
+for row in df.itertuples():
+    banana_dr_quantity = df.at[row.Index, 'quantity']
+    banana_dr_amount = df.at[row.Index, 'amount']
+    df.at[row.Index, 'price_per_KG'] = (banana_dr_amount/banana_dr_quantity)
 ```
 
 ### Plot correlation heatmap pandas python 
