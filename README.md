@@ -45,7 +45,16 @@ df = df.drop(df[(df.score < 50) & (df.score > 20)].index)
 
 ### Add calculated column Pandas Dataframe
 
+```
+# Create new column
+df['new_clolumn] = ''
 
+# Loop through dataframe appending to calculated column
+for row in df.itertuples():
+    banana_dr_quantity = df.at[row.Index, 'quantity']
+    banana_dr_amount = df.at[row.Index, 'amount']
+    df.at[row.Index, 'price_per_KG'] = (banana_dr_amount/banana_dr_quantity)
+```
 
 ### Provide list or concatenation of items while aggregating group by Pandas
 https://stackoverflow.com/a/27360130
