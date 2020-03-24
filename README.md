@@ -25,7 +25,7 @@ LIMIT
 ```
 
 
-### Infinity produced when calculating average
+### Infinity produced when calculating average (INF)
 - Remove all 0s from a column that is undergoing calculations
 
 ```
