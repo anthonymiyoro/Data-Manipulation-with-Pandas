@@ -33,6 +33,13 @@ LIMIT
 df = df[(df != 0).all(1)]
 ```
 
+### Box Cox Power Transform Dataframe Pandas
+https://stackoverflow.com/a/22889503/4861086
+```
+# new_banana_df['average_daily_selling_price'] = stats.boxcox(new_banana_df.average_daily_selling_price)[0]
+new_banana_df['average_daily_kg_selling_price'] = stats.boxcox(new_banana_df.average_daily_kg_selling_price)[0]
+# new_banana_df['volumes_sold_KG'] = stats.boxcox(new_banana_df.volumes_sold_KG)[0]
+```
 
 ### Pandas error: Truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all()
 https://stackoverflow.com/questions/36921951/truth-value-of-a-series-is-ambiguous-use-a-empty-a-bool-a-item-a-any-o
