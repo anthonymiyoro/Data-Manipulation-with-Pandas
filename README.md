@@ -1,27 +1,19 @@
 # pandasTipsAndTricks
-Tips and tricks when using data manipulation in Pandas
+Tips and tricks when using data manipulation in Python and Pandas
 
-### SQL Basics
-https://blog.hubspot.com/marketing/sql-tutorial-introduction
-
+### Loop thorugh list of dictionary of dictionaries 
+https://stackoverflow.com/questions/45592268/python-access-dictionary-inside-list-of-a-dictionary
 ```
-SELECT
-  *
-FROM `twigadms.dmslive.cache_finance_deliveries`
-WHERE
-  product_name in(
-    'Ajab home baking flour',
-    'Biryani Rice',
-    'Dairy Top UHT Milk',
-    'Watermelon',
-    'Tomatoes',
-    'Bananas',
-    'Potatoes'
-  )
-  AND delivery_date BETWEEN '2019-11-01'
-  AND '2020-02-15'
-LIMIT
-  10000;
+my_nested_dictionary = {'mydict': {'A': 'Letter A', 'B': 'Letter C', 'C': 'Letter C'}}
+print(my_nested_dictionary['mydict']['A'])
+
+
+for key in geocode_result: #list
+	for k, v in key.items(): #JSON object collect value
+	    if isinstance(v, dict):
+		if k == 'geometry': # If the key is geometry, get specified item
+		    loc_list.at[item.Index, 'latitude'] = v['location']['lat']
+		    loc_list.at[item.Index, 'longitude'] = v['location']['lng']
 ```
 
 ### Convert text area names to longitude and latitudes using google maps API Pandas Python
