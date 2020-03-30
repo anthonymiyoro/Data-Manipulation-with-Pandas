@@ -1,6 +1,15 @@
 # pandasTipsAndTricks
 Tips and tricks when using data manipulation in Python and Pandas
 
+### Box-Plot to find outliers in variables Plot-Ly Pandas Python
+https://plotly.com/python/box-plots/
+```
+import plotly.express as px
+
+fig = px.box(df, y="column_1")
+fig.show()
+```
+
 ### Loop thorugh list of dictionary of dictionaries 
 https://stackoverflow.com/questions/45592268/python-access-dictionary-inside-list-of-a-dictionary
 ```
