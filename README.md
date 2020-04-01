@@ -10,6 +10,16 @@ fig = px.box(df, y="column_1")
 fig.show()
 ```
 
+### Create a correlation plot
+```
+# vendor_drops.fillna(0, inplace = True, axis=0)
+corr_df = vendor_drops.corr()
+
+plt.figure(figsize = (13,10))
+sns.heatmap(corr_df, annot=True)
+plt.savefig('tomato_corr_heatmap.png')
+```
+
 ### Loop thorugh list of dictionary of dictionaries 
 https://stackoverflow.com/questions/45592268/python-access-dictionary-inside-list-of-a-dictionary
 ```
