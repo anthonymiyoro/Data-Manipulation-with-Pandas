@@ -35,6 +35,9 @@ for key in geocode_result: #list
 		    loc_list.at[item.Index, 'longitude'] = v['location']['lng']
 ```
 
+### 
+
+
 ### Convert text area names to longitude and latitudes using google maps API Pandas Python
 
 ```
@@ -98,7 +101,10 @@ df.drop(df[df.score < 50].index, inplace=True)
 df = df.drop(df[(df.score < 50) & (df.score > 20)].index)
 ```
 
-
+### Log Transform Pandas Feature
+```
+new_banana_df['volumes_sold_KG'] = np.log(new_banana_df['volumes_sold_KG'])
+```
 
 ### Add calculated column Pandas Dataframe
 
@@ -257,6 +263,16 @@ https://stackoverflow.com/questions/30222533/create-a-day-of-week-column-in-a-pa
 ```
 df['day_of_week'] = df['my_dates'].dt.day_name()
 ```
+### Build OLS Linear Regression
+```
+warnings.filterwarnings('ignore')
+# lm = smf.ols('np.log(column1) ~ np.log(column2)', data=df).fit()
+lm = smf.ols('column1  ~ column2', data=df).fit()
+
+lm.summary()
+
+```
+
 
 ### Create custom Maps with CSV Google
 https://webapps.stackexchange.com/a/102780
@@ -358,6 +374,17 @@ OR
 plt.figure(figsize = (10,7))
 sns.regplot(data = vendor_drops , x=vendor_drops['selling_price'], y=vendor_drops['gross_profit'])
 ```
+### Get dataframe correlation coefficent Pandas DataFrame
+```
+import seaborn as sns
+
+corr_df = new_banana_df.corr()
+
+plt.figure(figsize = (13,10))
+sns.heatmap(corr_df, annot=True)
+plt.savefig('banana_heatmap.png')
+```
+
 
 ### Export dataset pandas
 ```
