@@ -35,8 +35,10 @@ for key in geocode_result: #list
 		    loc_list.at[item.Index, 'longitude'] = v['location']['lng']
 ```
 
-### 
-
+### Concatenate dataframes Pandas (Must have same column names)
+```
+display('new_banana_drops', 'new_vendor_drops', pd.concat([new_banana_drops, new_vendor_drops]))
+```
 
 ### Convert text area names to longitude and latitudes using google maps API Pandas Python
 
