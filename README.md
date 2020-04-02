@@ -10,14 +10,14 @@ fig = px.box(df, y="column_1")
 fig.show()
 ```
 
-### Create a correlation plot
+### Create a correlation plot Pandas Pearsons Coefficient
 ```
 # vendor_drops.fillna(0, inplace = True, axis=0)
-corr_df = vendor_drops.corr()
+corr_df = df.corr()
 
 plt.figure(figsize = (13,10))
 sns.heatmap(corr_df, annot=True)
-plt.savefig('tomato_corr_heatmap.png')
+plt.savefig('df_heatmap.png')
 ```
 
 ### Loop thorugh list of dictionary of dictionaries 
@@ -186,14 +186,12 @@ https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.busday_count.h
 
 
 
-### Create new empty column from each value in column
+### Create new empty column from each value in row Pandas Dataframe
 ```
 for row in df.itertuples():
     print(row.column_name)
     df[row.column_name] = ""
 ```
-
-
 
 
 ### Get number of distinct weeks over whoch something occured weeks
@@ -211,8 +209,6 @@ df = df.groupby(['Unique_Stalls']).agg(
     
 df = df.reset_index()
 ```
-
-
 
 
 ### Error: Pandas unstack problems: ValueError: Index contains duplicate entries, cannot reshape
@@ -263,16 +259,18 @@ https://stackoverflow.com/questions/30222533/create-a-day-of-week-column-in-a-pa
 ```
 df['day_of_week'] = df['my_dates'].dt.day_name()
 ```
+
 ### Build OLS Linear Regression
 ```
+import statsmodels.api as sm
+import statsmodels.formula.api as smf
+
 warnings.filterwarnings('ignore')
 # lm = smf.ols('np.log(column1) ~ np.log(column2)', data=df).fit()
 lm = smf.ols('column1  ~ column2', data=df).fit()
 
 lm.summary()
-
 ```
-
 
 ### Create custom Maps with CSV Google
 https://webapps.stackexchange.com/a/102780
