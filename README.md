@@ -157,8 +157,6 @@ df = df_1.merge(df, left_on='product_name', right_on='product_name')
 ```
 
 
-
-
 ### Filter for time or date when using a datetime column
 https://stackoverflow.com/questions/40192704/filter-pandas-dataframe-for-past-x-days
 
@@ -295,6 +293,8 @@ del df['column_name']
 ### Plot Lineatr Regression Seaborn Pandas
 https://seaborn.pydata.org/examples/regression_marginals.html
 ```
+import seaborn as sns
+
 sns.jointplot("average_selling_price", "volumes_sold", data=milk_vendor_drops,
                   kind="reg", truncate=False,
                   color="m", height=7)
