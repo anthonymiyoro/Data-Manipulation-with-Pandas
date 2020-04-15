@@ -10,6 +10,22 @@ fig = px.box(df, y="column_1")
 fig.show()
 ```
 
+### Add distinct count column to dataframe
+https://stackoverflow.com/questions/15411158/pandas-countdistinct-equivalent
+
+```
+# Number of unique cutomers in a day
+new_df = df.groupby('delivery_date').Unique_Stalls.nunique()
+
+#Merge with orignal df
+result_df = pd.merge(df,
+                 new_df,
+                 on='delivery_date',
+                 how='left')
+		 
+result_df['delivery_date']= pd.to_datetime(result_df['delivery_date']) 
+```
+
 ### Create a correlation plot Pandas Pearsons Coefficient
 ```
 # vendor_drops.fillna(0, inplace = True, axis=0)
