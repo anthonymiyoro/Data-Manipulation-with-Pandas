@@ -11,6 +11,8 @@ fig.show()
 ```
 
 ### Get customers that bought product in one month and not the next month
+https://stackoverflow.com/a/47107164/4861086
+
 Collect or create datetime data that we will use to compare the two different values
 ```
 feb_date = '2020-02-01'
@@ -71,6 +73,9 @@ plt.figure(figsize = (13,10))
 sns.heatmap(corr_df, annot=True)
 plt.savefig('df_heatmap.png')
 ```
+
+### Recover deleted file from WSL
+https://stackoverflow.com/questions/38819322/how-to-recover-deleted-ipython-notebooks
 
 ### Loop thorugh list of dictionary of dictionaries 
 https://stackoverflow.com/questions/45592268/python-access-dictionary-inside-list-of-a-dictionary
