@@ -181,7 +181,6 @@ for row in df.itertuples():
 ```
 
 
-
 ### Provide list or concatenation of items while aggregating group by Pandas
 https://stackoverflow.com/a/27360130
 
@@ -200,8 +199,6 @@ df = df.groupby(['column_1', 'column_2']).agg(
 
 df = df.reset_index()
 ```
-
-
 
 
 ### Count number of occurences of items in Pandas dataframe and append with other data
@@ -226,8 +223,6 @@ df = df[(df.delivery_date < df.loan_startdate) & (df.delivery_date > (pd.to_date
 ```
 
 
-
-
 ### Count number of weekdays in a week 
 https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.busday_count.html
 ```
@@ -241,8 +236,6 @@ https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.busday_count.h
 ... np.busday_count('2011', '2012', weekmask='Sat')
 53
 ```
-
-
 
 
 ### Create new empty column from each value in row Pandas Dataframe
@@ -276,6 +269,7 @@ df = df.reset_index()
 - Or group by again
 - Reset the index
 - Try get the Pivot again
+
 
 ### Select rows whose column equals a certain value
 https://stackoverflow.com/questions/17071871/how-to-select-rows-from-a-dataframe-based-on-column-values
@@ -453,6 +447,8 @@ new_df.to_excel("ajab_bananas.xlsx")
 ### Build a Price Elasticity model
 
 https://datafai.com/2017/11/30/price-elasticity-of-demand/
+https://www.statworx.com/ch/blog/food-for-regression-using-sales-data-to-identify-price-elasticity/
+https://medium.com/teconomics-blog/how-to-get-the-price-right-9fda84a33fe5
 
 
 ### Merge dataframes
