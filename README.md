@@ -117,6 +117,11 @@ directions_result = gmaps.directions("Sydney Town Hall",
                                      mode="transit",
                                      departure_time=now)
 ```
+### Drop columns that have all NaNs
+```
+# Drop columns wth everything missing
+df_all.dropna(axis='columns',how='all')
+```
 
 
 ### Infinity produced when calculating average (INF)
