@@ -10,6 +10,42 @@ fig = px.box(df, y="column_1")
 fig.show()
 ```
 
+### Get customers that bought product in one month and not the next month
+Collect or create datetime data that we will use to compare the two different values
+```
+feb_date = '2020-02-01'
+march_date = '2020-03-01'
+april_date = '2020-04-01'
+
+feb_date = pd.to_datetime(feb_date)
+march_date = pd.to_datetime(march_date)
+april_date = pd.to_datetime(april_date)
+
+df['delivery_date'] =  pd.to_datetime(df['delivery_date'])
+```
+
+Specify the date periods with which we will be comparing values
+```
+feb_df = df[(df.delivery_date < march_date) & (df.delivery_date > feb_date)]
+march_df = df[(df.delivery_date < april_date) & (df.delivery_date > march_date)] 
+```
+
+Merge both DFs
+```
+df_all = feb_df.merge(march_df.drop_duplicates(), on=['Unique_Stalls_x'], how='left', indicator=True)
+
+#Drop rows that appearedn both
+df_all.drop(df_all[df_all._merge == 'both'].index, inplace=True)
+
+# Drop columns wth everything missing
+df_all.dropna(axis='columns',how='all')
+
+df_no_longer = df_all.groupby(['Unique_Stalls_x']).agg(
+    bales_bought=('uom_count_x', sum)
+    )
+
+df_no_longer = df_no_longer.reset_index()
+```
 ### Add distinct count column to dataframe
 https://stackoverflow.com/questions/15411158/pandas-countdistinct-equivalent
 
