@@ -1,6 +1,20 @@
 # pandasTipsAndTricks
 Tips and tricks when using data manipulation in Python and Pandas
 
+### Plot Regression when LogTransformed
+https://stackoverflow.com/a/51061094/4861086
+```
+# sns.pairplot(milk_vendor_drops,kind='reg',height=8, x_vars=['average_selling_price'], y_vars=['volumes_sold'])
+g = sns.jointplot( "price_per_kg", "number_of_kgs_sold", data=vendor_drops,
+                  kind="reg", truncate=False,
+                  color="m", height=7, logx = True)
+
+g.ax_joint.set_xscale('log')
+g.ax_joint.set_yscale('log')
+
+plt.title('Watermelons ', y=20, fontsize = 16)
+```
+
 ### Box-Plot to find outliers in variables Plot-Ly Pandas Python
 https://plotly.com/python/box-plots/
 ```
