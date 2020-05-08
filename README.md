@@ -15,6 +15,20 @@ g.ax_joint.set_yscale('log')
 plt.title('Watermelons ', y=20, fontsize = 16)
 ```
 
+### Count distinct Pandas
+https://stackoverflow.com/questions/15411158/pandas-countdistinct-equivalent
+```
+table.groupby('YEARMONTH').CLIENTCODE.nunique()
+```
+
+
+### Delete/Drop rows based on value Pandas dataframe
+https://stackoverflow.com/questions/41934584/how-to-drop-rows-by-list-in-pandas
+https://hackersandslackers.com/pandas-dataframe-drop/
+```
+print (df[~df.column_name.isin(list_name)])
+```
+
 ### Box-Plot to find outliers in variables Plot-Ly Pandas Python
 https://plotly.com/python/box-plots/
 ```
