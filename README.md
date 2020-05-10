@@ -14,6 +14,13 @@ g.ax_joint.set_yscale('log')
 
 plt.title('Watermelons ', y=20, fontsize = 16)
 ```
+### Get reorder rate from loan dataset
+-group by customer, 
+-then product name 
+-then count the number of deliveries
+-and distinct number of weeks served, total deliveries for number of weeks
+```
+```
 
 ### Count distinct Pandas
 https://stackoverflow.com/questions/15411158/pandas-countdistinct-equivalent
