@@ -20,6 +20,78 @@ plt.title('Watermelons ', y=20, fontsize = 16)
 -then count the number of deliveries
 -and distinct number of weeks served, total deliveries for number of weeks
 ```
+
+2.3  Get weekly reorder rate for each product per customer
+
+deliveries_financed_loans['Week_Number'] = deliveries_financed_loans['delivery_date'].dt.week
+
+executed in 8ms, finished 12:19:38 2020-05-08
+
+​
+
+reorder_rate_df = deliveries_financed_loans.groupby(['Unique_Stalls', 'product_name']).agg(
+
+    number_of_deliveries_per_customer=('delivery_callback_id', np.count_nonzero),
+
+    distinct_number_of_weeks=('Week_Number', pd.Series.nunique)
+
+)
+
+​
+
+reorder_rate_df['weekly_reorder_rate'] = reorder_rate_df['number_of_deliveries_per_customer']/reorder_rate_df['distinct_number_of_weeks']
+
+reorder_rate_df
+
+executed in 761ms, finished 12:38:48 2020-05-08
+
+reorder_rate_df.to_excel("reorder_rate_df.xlsx") 
+
+executed in 1.32s, finished 12:40:32 2020-05-08
+
+new_reorder_rate_df = reorder_rate_df.groupby(['product_name']).agg(
+
+    average_weekly_customer_reorder_rate=('weekly_reorder_rate', np.average)
+
+)
+
+​
+
+new_reorder_rate_df.reset_index(inplace=True)
+
+new_reorder_rate_df
+
+executed in 70ms, finished 12:40:44 2020-05-08
+2.4  Filter to only products that we focus on in analysis
+
+# Drop via logic: similar to SQL 'WHERE' clause
+
+product_list = ['Ajab home baking flour','Pembe Maize Flour','Soko Maize Flour','Biryani Rice',
+
+ 'Halisi Cooking Oil','Postman Cooking Oil','Kabras Sugar','Afia Mango',
+
+ 'Salit Cooking Oil','Pembe Home Baking Flour','Bananas','Potatoes',
+
+ 'Tomatoes','Onions','Watermelon']
+
+​
+
+executed in 6ms, finished 12:40:49 2020-05-08
+
+# new_reorder_rate_df[~new_reorder_rate_df.isin(product_list)]
+
+new_reorder_rate_df = new_reorder_rate_df[new_reorder_rate_df.product_name.isin(product_list)]
+
+executed in 6ms, finished 12:40:51 2020-05-08
+
+new_reorder_rate_df
+
+executed in 18ms, finished 12:40:56 2020-05-08
+
+​
+
+new_reorder_rate_df.to_excel("produce_reorder_rate_df.xlsx") 
+
 ```
 
 ### Count distinct Pandas
