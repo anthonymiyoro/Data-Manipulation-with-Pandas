@@ -20,7 +20,6 @@ plt.title('Watermelons ', y=20, fontsize = 16)
 -then count the number of deliveries
 -and distinct number of weeks served, total deliveries for number of weeks
 ```
-
 2.3  Get weekly reorder rate for each product per customer
 
 deliveries_financed_loans['Week_Number'] = deliveries_financed_loans['delivery_date'].dt.week
