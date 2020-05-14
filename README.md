@@ -99,6 +99,11 @@ https://stackoverflow.com/questions/15411158/pandas-countdistinct-equivalent
 table.groupby('YEARMONTH').CLIENTCODE.nunique()
 ```
 
+### Convert Pandas Column COntent to Python List
+https://stackoverflow.com/a/22341390
+```
+col_one_list = df['one'].tolist()
+```
 
 ### Delete/Drop rows based on value Pandas dataframe
 https://stackoverflow.com/questions/41934584/how-to-drop-rows-by-list-in-pandas
