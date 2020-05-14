@@ -450,6 +450,11 @@ milk_vendor_drops.head(5)
 https://stackoverflow.com/questions/13411544/delete-column-from-pandas-dataframe
 ```
 del df['column_name']
+
+df.drop(df.columns[22:56], axis=1, inplace=True)
+
+df_all.drop(['delivery_date_x', 'depot_name_x', 'route_name_x', 'shop_type_x', 'delivery_id_x', 'product_name_x', 
+'product_item_name_x', 'Weight_x', 'Amount_x'], axis=1, inplace=True)
 ```
 
 ### Plot Lineatr Regression Seaborn Pandas
