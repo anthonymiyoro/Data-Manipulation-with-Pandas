@@ -4,8 +4,8 @@ Tips and tricks when using data manipulation in Python and Pandas
 ### Plot Regression when LogTransformed
 https://stackoverflow.com/a/51061094/4861086
 ```
-# sns.pairplot(milk_vendor_drops,kind='reg',height=8, x_vars=['average_selling_price'], y_vars=['volumes_sold'])
-g = sns.jointplot( "price_per_kg", "number_of_kgs_sold", data=vendor_drops,
+# sns.pairplot(df,kind='reg',height=8, x_vars=['column1'], y_vars=['column2'])
+g = sns.jointplot( "column1", "column2", data=df,
                   kind="reg", truncate=False,
                   color="m", height=7, logx = True)
 
