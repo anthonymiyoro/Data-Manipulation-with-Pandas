@@ -1,6 +1,22 @@
 # pandasTipsAndTricks
 Tips and tricks when using data manipulation in Python and Pandas
 
+### Create Pandas columns based on element in list
+https://stackoverflow.com/questions/47893355/check-if-value-from-a-dataframe-column-is-in-a-list-python
+- Set conditions(Check if value is in list) or not (https://stackoverflow.com/questions/14057007/remove-rows-not-isinx)
+- Create choices based on whether or not item is in list
+- Apply choices using np.select (https://stackoverflow.com/questions/19913659/pandas-conditional-creation-of-a-series-dataframe-column)
+```
+conditions = [
+    (volumes_sold['delivery_date'].isin(kenyan_holidays)),  # If item is in list
+    (~volumes_sold['delivery_date'].isin(kenyan_holidays))] # If item is not in list
+
+choices = [1,0] # Apply 1st item if delivery date in list, 2nd item if item not in list
+
+volumes_sold['holiday'] = np.select(conditions, choices, default=0) # Perform Operation
+```
+
+
 ### Plot Regression when LogTransformed
 https://stackoverflow.com/a/51061094/4861086
 ```
@@ -19,77 +35,38 @@ plt.title('Watermelons ', y=20, fontsize = 16)
 -then product name 
 -then count the number of deliveries
 -and distinct number of weeks served, total deliveries for number of weeks
-```
-2.3  Get weekly reorder rate for each product per customer
 
+2.3  Get weekly reorder rate for each product per customer
+```
 deliveries_financed_loans['Week_Number'] = deliveries_financed_loans['delivery_date'].dt.week
 
-executed in 8ms, finished 12:19:38 2020-05-08
-
-​
-
 reorder_rate_df = deliveries_financed_loans.groupby(['Unique_Stalls', 'product_name']).agg(
-
     number_of_deliveries_per_customer=('delivery_callback_id', np.count_nonzero),
-
     distinct_number_of_weeks=('Week_Number', pd.Series.nunique)
-
 )
-
-​
 
 reorder_rate_df['weekly_reorder_rate'] = reorder_rate_df['number_of_deliveries_per_customer']/reorder_rate_df['distinct_number_of_weeks']
 
-reorder_rate_df
-
-executed in 761ms, finished 12:38:48 2020-05-08
-
 reorder_rate_df.to_excel("reorder_rate_df.xlsx") 
 
-executed in 1.32s, finished 12:40:32 2020-05-08
-
 new_reorder_rate_df = reorder_rate_df.groupby(['product_name']).agg(
-
     average_weekly_customer_reorder_rate=('weekly_reorder_rate', np.average)
-
 )
 
-​
-
-new_reorder_rate_df.reset_index(inplace=True)
-
-new_reorder_rate_df
-
-executed in 70ms, finished 12:40:44 2020-05-08
+​ new_reorder_rate_df.reset_index(inplace=True)
+```
 2.4  Filter to only products that we focus on in analysis
-
+````
 # Drop via logic: similar to SQL 'WHERE' clause
 
 product_list = ['Ajab home baking flour','Pembe Maize Flour','Soko Maize Flour','Biryani Rice',
-
  'Halisi Cooking Oil','Postman Cooking Oil','Kabras Sugar','Afia Mango',
-
  'Salit Cooking Oil','Pembe Home Baking Flour','Bananas','Potatoes',
-
  'Tomatoes','Onions','Watermelon']
-
-​
-
-executed in 6ms, finished 12:40:49 2020-05-08
 
 # new_reorder_rate_df[~new_reorder_rate_df.isin(product_list)]
 
 new_reorder_rate_df = new_reorder_rate_df[new_reorder_rate_df.product_name.isin(product_list)]
-
-executed in 6ms, finished 12:40:51 2020-05-08
-
-new_reorder_rate_df
-
-executed in 18ms, finished 12:40:56 2020-05-08
-
-​
-
-new_reorder_rate_df.to_excel("produce_reorder_rate_df.xlsx") 
 
 ```
 
