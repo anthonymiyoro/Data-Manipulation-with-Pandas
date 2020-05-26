@@ -53,10 +53,10 @@ new_reorder_rate_df = reorder_rate_df.groupby(['product_name']).agg(
     average_weekly_customer_reorder_rate=('weekly_reorder_rate', np.average)
 )
 
-​ new_reorder_rate_df.reset_index(inplace=True)
+ new_reorder_rate_df.reset_index(inplace=True)
 ```
 2.4  Filter to only products that we focus on in analysis
-````
+```
 # Drop via logic: similar to SQL 'WHERE' clause
 
 product_list = ['Ajab home baking flour','Pembe Maize Flour','Soko Maize Flour','Biryani Rice',
@@ -66,9 +66,11 @@ product_list = ['Ajab home baking flour','Pembe Maize Flour','Soko Maize Flour',
 
 # new_reorder_rate_df[~new_reorder_rate_df.isin(product_list)]
 
+
 new_reorder_rate_df = new_reorder_rate_df[new_reorder_rate_df.product_name.isin(product_list)]
 
 ```
+
 
 ### Count distinct Pandas
 https://stackoverflow.com/questions/15411158/pandas-countdistinct-equivalent
