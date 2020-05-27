@@ -1,11 +1,36 @@
 # pandasTipsAndTricks
 Tips and tricks when using data manipulation in Python and Pandas
 
+### Create/Add Column values based on date/time period
+```
+# Create Seasonality Feature
+
+# Create mask for different season time periods
+season_1_start = '2019-09-01'
+season_1_end = '2020-01-31'
+
+season_2_start = '2020-04-01'
+season_2_end = '2020-07-30'
+
+season1_mask = ((volumes_sold['df'] >= season_1_start) & (volumes_sold['df'] <= season_1_end))
+season2_mask = ((volumes_sold['df'] >= season_2_start) & (volumes_sold['df'] <= season_2_end))
+
+conditions = [
+    (season1_mask == True),
+    (season1_mask == False),
+    (season2_mask == True),
+    (season2_mask == False)
+]
+
+choices = [1,0,1,0]
+
+df['in_season'] = np.select(conditions, choices, default=0)
+```
 
 ### Sum many/all columns in dataframe
 - Split dataframe by deleting columns we dont want added (https://stackoverflow.com/a/34683105/4861086)
 - Perfrom groupping on columns we dont want added
-- Perform add on columns we want added ()
+- Perform add on columns we want added (https://stackoverflow.com/questions/35001996/pandas-grouping-dataframe-by-hundreds)maybe
 ```
 # Copy Columns we need
 new = old[['A', 'C', 'D']].copy()
