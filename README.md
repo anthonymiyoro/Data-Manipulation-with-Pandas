@@ -1,7 +1,8 @@
 # pandasTipsAndTricks
 Tips and tricks when using data manipulation in Python and Pandas
 
-## Sum many/all columns in dataframe
+
+### Sum many/all columns in dataframe
 - Split dataframe by deleting columns we dont want added (https://stackoverflow.com/a/34683105/4861086)
 - Perfrom groupping on columns we dont want added
 - Perform add on columns we want added ()
@@ -382,6 +383,10 @@ df = df.groupby(['Unique_Stalls']).agg(
     
 df = df.reset_index()
 ```
+
+### None of [Index([..], dtype='object')] are in the [columns]”
+https://stackoverflow.com/questions/55652574/how-to-solve-keyerror-unone-of-index-dtype-object-are-in-the-colum
+- There is a space in the title of one of our columns
 
 
 ### Error: Pandas unstack problems: ValueError: Index contains duplicate entries, cannot reshape
