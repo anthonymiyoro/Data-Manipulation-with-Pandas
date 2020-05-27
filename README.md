@@ -1,10 +1,36 @@
 # pandasTipsAndTricks
 Tips and tricks when using data manipulation in Python and Pandas
 
+## Sum many/all columns in dataframe
+- Split dataframe by deleting columns we dont want added (https://stackoverflow.com/a/34683105/4861086)
+- Perfrom groupping on columns we dont want added
+- Perform add on columns we want added ()
+```
+# Copy Columns we need
+new = old[['A', 'C', 'D']].copy()
+
+# Delete Copied Columns
+old = old.drop(columns=[ 'A', 'C', 'D'])
+
+# Group many columns at once in new df
+volumes_sold_encoded = volumes_sold_encoded.groupby('delivery_date').sum()
+
+volumes_sold_shop_type.drop(columns=['Unnamed: 0'])
+
+volumes_sold_encoded = volumes_sold_encoded.reset_index()
+# Group old DF
+
+# Merge both without suffix
+volumes_sold_result_df.merge(volumes_sold_encoded, left_on='delivery_date', right_on='delivery_date', suffixes=(False, False))
+
+```
+
 ### Create Pandas columns based on element in list
 https://stackoverflow.com/questions/47893355/check-if-value-from-a-dataframe-column-is-in-a-list-python
 - Set conditions(Check if value is in list) or not (https://stackoverflow.com/questions/14057007/remove-rows-not-isinx)
+
 - Create choices based on whether or not item is in list
+
 - Apply choices using np.select (https://stackoverflow.com/questions/19913659/pandas-conditional-creation-of-a-series-dataframe-column)
 ```
 conditions = [
