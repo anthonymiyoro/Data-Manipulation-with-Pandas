@@ -1,6 +1,17 @@
 # Data-Manipulation-with-Pandas
 Tips and tricks when using data manipulation in Python and Pandas
 
+
+### Create/Add Column in pandas dataframe based on other dataframe
+- Make sure *other* dataframe only has the columns we need to add and the columns we will merge with
+- Perform an inner merge on both with origial df on left and other df on right
+```
+orig_df = orig_df.merge(other_df, how='inner', left_on=['delivery_date', 'product_item_name'], right_on=['sale_date', 'product_item_name'])
+
+volumes_sold = volumes_sold.drop(['delta'], axis=1)
+```
+
+
 ### Create/Add Column values based on date/time period
 ```
 # Create Seasonality Feature
