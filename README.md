@@ -1,4 +1,4 @@
-# pandasTipsAndTricks
+# Data-Manipulation-with-Pandas
 Tips and tricks when using data manipulation in Python and Pandas
 
 ### Create/Add Column values based on date/time period
