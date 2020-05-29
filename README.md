@@ -2,6 +2,16 @@
 Tips and tricks when using data manipulation in Python and Pandas
 
 
+### Get all data from dataframe that is in a list/ Get all data that has nothing in list pandas
+Get all data that is not in the list
+```
+new_df = (old_df[~old_df.column_name.isin(list_name)])
+```
+Get all the data that is in a list
+```
+new_df = (old_df[old_df.column_name.isin(list_name)])
+```
+
 ### Create/Add Column in pandas dataframe based on other dataframe
 - Make sure *other* dataframe only has the columns we need to add and the columns we will merge with
 - Perform an inner merge on both with origial df on left and other df on right
