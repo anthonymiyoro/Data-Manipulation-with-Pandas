@@ -2,6 +2,11 @@
 Tips and tricks when using data manipulation in Python and Pandas
 
 
+### Sum distinct values in Pandas Dataframe columns after group by 
+- Group by all required items plus columns we want to sum their distinct values.
+- Do a scond group by where you sum the values in the column with distinct values.
+
+
 ### Get all data from dataframe that is in a list/ Get all data that has nothing in list pandas
 Get all data that is not in the list
 ```
