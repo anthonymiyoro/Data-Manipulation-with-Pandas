@@ -1,6 +1,11 @@
 # Data-Manipulation-with-Pandas
 Tips and tricks when using data manipulation in Python and Pandas
 
+ git remote set-url origin
+ git pull
+ git branch
+ git checkout feature/sales_predictor
+
 ### Add aggregate function to one of the where clauses  SQL
 https://stackoverflow.com/a/19828119/4861086 (In the comment)
 
