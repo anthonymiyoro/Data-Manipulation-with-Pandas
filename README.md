@@ -3,6 +3,7 @@ Tips and tricks when using data manipulation in Python and Pandas
 
 - git remote set-url origin
 - git pull
+- git fetch --all
 - git branch
 - git checkout feature/sales_predictor
 
