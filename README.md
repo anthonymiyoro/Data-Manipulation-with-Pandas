@@ -7,6 +7,12 @@ Tips and tricks when using data manipulation in Python and Pandas
 - git branch
 - git checkout feature/sales_predictor
 
+### Add a number of days to column with date
+https://stackoverflow.com/a/46571728/4861086
+```
+df['x_DATE'] = df['DATE'] + pd.DateOffset(days=180)
+```
+
 ### Pandas Convert negative column to positive
 ```
 next_purchase['avgtime_days'] = next_purchase['avgtime_days'].abs()
