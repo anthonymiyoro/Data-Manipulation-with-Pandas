@@ -7,6 +7,12 @@ Tips and tricks when using data manipulation in Python and Pandas
 - git branch
 - git checkout feature/sales_predictor
 
+### Round off pandas column
+https://stackoverflow.com/questions/26133538/round-a-single-column-in-pandas
+```
+df.value1 = df.value1.round()
+```
+
 ### Add column with numbers to datime column pandas
 https://stackoverflow.com/a/46907838/4861086
 ```
