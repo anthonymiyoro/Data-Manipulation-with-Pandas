@@ -7,6 +7,11 @@ Tips and tricks when using data manipulation in Python and Pandas
 - git branch
 - git checkout feature/sales_predictor
 
+### Pandas Convert negative column to positive
+```
+next_purchase['avgtime_days'] = next_purchase['avgtime_days'].abs()
+```
+
 ### Add aggregate function to one of the where clauses  SQL
 https://stackoverflow.com/a/19828119/4861086 (In the comment)
 
