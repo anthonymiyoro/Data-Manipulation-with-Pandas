@@ -7,6 +7,12 @@ Tips and tricks when using data manipulation in Python and Pandas
 - git branch
 - git checkout feature/sales_predictor
 
+### Add column with numbers to datime column pandas
+https://stackoverflow.com/a/46907838/4861086
+```
+df['new'] = df['transaction_date'] + pd.to_timedelta(df['payment_plan_days'], unit='d')
+```
+
 ### Add a number of days to column with date
 https://stackoverflow.com/a/46571728/4861086
 ```
