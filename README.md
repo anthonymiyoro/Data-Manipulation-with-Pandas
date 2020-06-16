@@ -7,6 +7,26 @@ Tips and tricks when using data manipulation in Python and Pandas
 - git branch
 - git checkout feature/sales_predictor
 
+### Get average difference between dates SQL
+https://stackoverflow.com/a/32723609/4861086
+```
+SELECT id_usuarioweb, CASE 
+        WHEN COUNT(*) < 2
+            THEN 0
+        ELSE DATEDIFF(dd, 
+                MIN(
+                    dt_fechaventa
+                ), MAX(
+                    dt_fechaventa
+                )) / (
+                COUNT(*) - 
+                1
+                )
+        END AS avgtime_days
+FROM mytable
+GROUP BY id_usuarioweb
+```
+
 ### Convert pandas column to numbers
 https://stackoverflow.com/a/28648923/4861086
 ```
