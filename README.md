@@ -7,6 +7,16 @@ Tips and tricks when using data manipulation in Python and Pandas
 - git branch
 - git checkout feature/sales_predictor
 
+### Convert pandas column to numbers
+https://stackoverflow.com/a/28648923/4861086
+```
+# convert all columns of DataFrame
+df = df.apply(pd.to_numeric) # convert all columns of DataFrame
+
+# convert just columns "a" and "b"
+df[["a", "b"]] = df[["a", "b"]].apply(pd.to_numeric)
+```
+
 ### Round off pandas column
 https://stackoverflow.com/questions/26133538/round-a-single-column-in-pandas
 ```
