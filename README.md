@@ -17,8 +17,12 @@ with
 ```
 for row in next_purchase.itertuples():
 	row.latest_delivery
+	
+	or
+	
+latest_delivery = next_purchase.at[row.Index, 'latest_delivery']
 ```
-
+or use a mask with datetime
 ### Get average difference between dates SQL
 https://stackoverflow.com/a/32723609/4861086
 ```
