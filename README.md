@@ -7,6 +7,18 @@ Tips and tricks when using data manipulation in Python and Pandas
 - git branch
 - git checkout feature/sales_predictor
 
+### ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+You are refrencing a series instead of an individual value, replace:
+```
+for row in next_purchase.itertuples():
+	earliest_date = row.earliest_delivery
+```
+with
+```
+for row in next_purchase.itertuples():
+	row.latest_delivery
+```
+
 ### Get average difference between dates SQL
 https://stackoverflow.com/a/32723609/4861086
 ```
