@@ -7,6 +7,12 @@ Tips and tricks when using data manipulation in Python and Pandas
 - git branch
 - git checkout feature/sales_predictor
 
+### Create column with  multiple dates between date range
+https://stackoverflow.com/a/39107328/4861086
+https://stackoverflow.com/a/45670296/4861086
+```
+
+```
 ### ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
 You are refrencing a series instead of an individual value, replace:
 ```
