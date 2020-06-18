@@ -13,6 +13,22 @@ https://stackoverflow.com/a/45670296/4861086
 ```
 
 ```
+
+### Extract date from timestamp object
+https://stackoverflow.com/a/19106012/4861086
+```
+In [243]: index = DatetimeIndex(s)
+
+In [244]: index
+Out[244]:
+<class 'pandas.tseries.index.DatetimeIndex'>
+[2013-10-01 00:24:16, 2013-10-02 00:24:16]
+Length: 2, Freq: None, Timezone: None
+
+In [246]: index.date
+Out[246]:
+array([datetime.date(2013, 10, 1), datetime.date(2013, 10, 2)], dtype=object)
+```
 ### ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
 You are refrencing a series instead of an individual value, replace:
 ```
