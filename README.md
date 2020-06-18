@@ -8,10 +8,19 @@ Tips and tricks when using data manipulation in Python and Pandas
 - git checkout feature/sales_predictor
 
 ### Create column with  multiple dates between date range
-https://stackoverflow.com/a/39107328/4861086
-https://stackoverflow.com/a/45670296/4861086
-```
+- https://stackoverflow.com/a/39107328/4861086 (Collect dates between datetime ranges)
+- https://stackoverflow.com/a/45670296/4861086 (Loop through rows in a dataframe)
 
+- Begin loop through dataframe
+- Collect dates as list (by default)
+- Extract date from timestamp object
+- Write to dataframe
+
+```
+for i, row in df.iterrows():
+    range_val = pd.date_range(row['earliest_delivery'], row['latest_delivery'], freq=pd.DateOffset(days=row['avgtime_days']))
+    range_val = range_val.date
+    df.at[i, 'new_predicted_date'] = (range_val)
 ```
 
 ### Extract date from timestamp object
