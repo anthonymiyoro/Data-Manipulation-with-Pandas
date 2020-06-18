@@ -8,12 +8,17 @@ Tips and tricks when using data manipulation in Python and Pandas
 - git checkout feature/sales_predictor
 
 ### Loop through dataframe while extracting value from each row and wrting to another
+- Loop through 1st dataframe
+- initiate variable
+- Loop through 2nd dataframe
+- if date in 1st df appears in 2nd df, create variable that holds new number
+- write new number to 1st dataframe
 ```
-for i, row_volumes in df1.iterrows():
+for i, row_df1 in df1.iterrows():
     predicted_sales_volumes = 0
-    for i_2, row_next_purchase in df2.iterrows():
-        if row_volumes['delivery_date'] in row_next_purchase['all_predicted_date']:
-            predicted_sales_volumes = int(predicted_sales_volumes) + int(row_next_purchase['average_delivery_weight'])
+    for i_2, row_df2 in df2.iterrows():
+        if row_df1['delivery_date'] in row_df2['all_predicted_date']:
+            predicted_sales_volumes = int(predicted_sales_volumes) + int(row_df2['average_delivery_weight'])
     df1.at[i, 'predicted_volumes'] = predicted_sales_volumes
 ```
 
