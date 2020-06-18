@@ -7,6 +7,35 @@ Tips and tricks when using data manipulation in Python and Pandas
 - git branch
 - git checkout feature/sales_predictor
 
+### Loop through dataframe while extracting value from each row and wrting to another
+```
+for i, row_volumes in df1.iterrows():
+    predicted_sales_volumes = 0
+    for i_2, row_next_purchase in df2.iterrows():
+        if row_volumes['delivery_date'] in row_next_purchase['all_predicted_date']:
+            predicted_sales_volumes = int(predicted_sales_volumes) + int(row_next_purchase['average_delivery_weight'])
+    df1.at[i, 'predicted_volumes'] = predicted_sales_volumes
+```
+
+### TypeError: argument of type 'Timestamp' is not iterable
+Convert the column that is being traversed to a list containing the contents of the row while looping thorugh it
+```
+for i, row_volumes in df2.iterrows():
+    market_price = 0
+    market_price_delta = 0
+    for i_2, row_market_price in df1.iterrows():
+    #important part !!!!!!
+        date_list = []
+        date_list.append(pd.to_datetime(row_market_price['date']))
+        if row_volumes['delivery_date'] in date_list:
+	#important part ends !!!!!!
+            market_price = int(row_market_price['price_kg'])
+            market_price_delta = int(row_volumes['price_per_KG']) - market_price
+    df2.at[i, 'median_market_price'] = market_price
+    df2.at[i, 'market_price_delta'] = market_price_delta
+```
+
+
 ### Pandas error= ValueError: cannot set a Timestamp with a non-timestamp list
 The column was a timestamp datatype. Delte the column or make a new one with the same name.
 
