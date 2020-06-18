@@ -7,6 +7,16 @@ Tips and tricks when using data manipulation in Python and Pandas
 - git branch
 - git checkout feature/sales_predictor
 
+### Pandas error= ValueError: cannot set a Timestamp with a non-timestamp list
+The column was a timestamp datatype. Delte the column or make a new one with the same name.
+
+### Delete pandas dataframe row if column has 0
+https://stackoverflow.com/a/18173074/4861086
+```
+df = df[df.line_race != 0]
+```
+
+
 ### Create column with  multiple dates between date range
 - https://stackoverflow.com/a/39107328/4861086 (Collect dates between datetime ranges)
 - https://stackoverflow.com/a/45670296/4861086 (Loop through rows in a dataframe)
