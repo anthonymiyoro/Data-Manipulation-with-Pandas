@@ -9,6 +9,7 @@ Tips and tricks when using data manipulation in Python and Pandas
 
 ### Plot Week on Week trends
 ```
+import seaborn as sns
 sns.lineplot(df['Week'],df['Sold Units'])
 ```
 
