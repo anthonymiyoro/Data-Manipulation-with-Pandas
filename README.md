@@ -7,6 +7,12 @@ Tips and tricks when using data manipulation in Python and Pandas
 - git branch
 - git checkout feature/sales_predictor
 
+### Plot Week on Week trends
+```
+sns.lineplot(df['Week'],df['Sold Units'])
+```
+
+
 ### Loop through dataframe while extracting value from each row and wrting to another
 - Loop through 1st dataframe
 - initiate variable
