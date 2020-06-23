@@ -7,6 +7,31 @@ Tips and tricks when using data manipulation in Python and Pandas
 - git branch
 - git checkout feature/sales_predictor
 
+### Perform Train-Test Split
+```
+#Breaking the data and selecting features , predictors
+from sklearn.model_selection import train_test_split
+predictors=df_final.drop(['Sold Units','Date'],axis=1)
+target=df_final['Sold Units']
+x_train,x_cv,y_train,y_cv=train_test_split(predictors,target,test_size=0.2,random_state=7)
+```
+
+### Test Multiple Models in One Go
+```
+#Comparing Algorithms
+def scores(i):
+    lin = i()
+    lin.fit(x_train, y_train)
+    y_pred=lin.predict(x_cv)
+    lin_r= r2_score(y_cv, y_pred)
+    s.append(lin_r)
+#Checking the scores by using our function
+algos=[LinearRegression,KNeighborsRegressor,RandomForestRegressor,Lasso,ElasticNet,DecisionTreeRegressor]
+s=[]
+for i in algos:
+    scores(i)
+```
+
 ### Plot Week on Week trends
 ```
 import seaborn as sns
