@@ -16,8 +16,19 @@ target=df_final['Sold Units']
 x_train,x_cv,y_train,y_cv=train_test_split(predictors,target,test_size=0.2,random_state=7)
 ```
 
-### Test Multiple Models in One Go
+### Test Multiple Models in One Go (Train-Test split first!!!!)
 ```
+#Import ML Algorithms
+from sklearn.neighbors import KNeighborsRegressor
+from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.linear_model import Lasso
+from sklearn.linear_model import ElasticNet
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.neighbors import KNeighborsRegressor
+from sklearn.ensemble import GradientBoostingRegressor
+from sklearn.metrics import r2_score
+
 #Comparing Algorithms
 def scores(i):
     lin = i()
@@ -30,6 +41,14 @@ algos=[LinearRegression,KNeighborsRegressor,RandomForestRegressor,Lasso,ElasticN
 s=[]
 for i in algos:
     scores(i)
+    
+    
+#Checking the score
+models = pd.DataFrame({
+    'Method': ['LinearRegression', 'KNeighborsRegressor', 
+              'RandomForestRegressor', 'Lasso','DecisionTreeRegressor'],
+    'Score': [s[0],s[1],s[2],s[3],s[4]]})
+models.sort_values(by='Score', ascending=False)
 ```
 
 ### Plot Week on Week trends
