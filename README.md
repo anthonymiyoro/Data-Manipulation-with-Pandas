@@ -11,6 +11,9 @@ Tips and tricks when using data manipulation in Python and Pandas
 ```
 import seaborn as sns
 sns.lineplot(df['Week'],df['Sold Units'])
+
+#Yearly Trend
+sns.lineplot(df['Year'],df['Sold Units'])
 ```
 
 
