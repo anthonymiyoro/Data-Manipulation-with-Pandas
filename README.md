@@ -7,13 +7,33 @@ Tips and tricks when using data manipulation in Python and Pandas
 - git branch
 - git checkout feature/sales_predictor
 
-### Perform Train-Test Split
+### Perform Train-Test Split and build model on it + Feature Importance
+- Model building is done after removing unneedded features in *predictors* as shown in the snippet below.
 ```
 #Breaking the data and selecting features , predictors
 from sklearn.model_selection import train_test_split
 predictors=df_final.drop(['Sold Units','Date'],axis=1)
 target=df_final['Sold Units']
 x_train,x_cv,y_train,y_cv=train_test_split(predictors,target,test_size=0.2,random_state=7)
+```
+```
+#Hypertuned Model
+model = RandomForestRegressor(oob_score = True,n_jobs =3,random_state =7,
+                              max_features = "auto", min_samples_leaf =4)
+
+model.fit(x_train,y_train)
+```
+```
+#R2 Score
+y_pred = model.predict(x_cv)
+r2_score(y_cv, y_pred)
+```
+```
+#Plot feature importance
+feat_importances = pd.Series(model.feature_importances_, 
+                             index=predictors.columns)
+feat_importances.nlargest(10).plot(kind='barh')
+
 ```
 
 ### Test Multiple Models in One Go (Train-Test split first!!!!)
