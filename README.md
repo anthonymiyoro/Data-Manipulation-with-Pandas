@@ -7,6 +7,13 @@ Tips and tricks when using data manipulation in Python and Pandas
 - git branch
 - git checkout feature/sales_predictor
 
+### Filter dataframe based on column values
+```
+twiga_higher_df = df[(df.price_per_KG > df.median_market_price)]
+twiga_lower_df = df[(df.price_per_KG < df.median_market_price)]
+twiga_equal_df = df[(df.price_per_KG == df.median_market_price)]
+```
+
 ### Create calculated column from other columns pandas
 ```
 df['new_col'] = (df.col2/df.col3)
