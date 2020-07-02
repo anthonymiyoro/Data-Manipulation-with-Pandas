@@ -7,6 +7,21 @@ Tips and tricks when using data manipulation in Python and Pandas
 - git branch
 - git checkout feature/sales_predictor
 
+### Create calculated column from other columns pandas
+```
+df['new_col'] = (df.col2/df.col3)
+```
+
+### Plot a linegraph Python Pandas
+```
+import seaborn as sns
+
+# Week Trends
+sns.set(rc={'figure.figsize': (19, 8)})
+sns.lineplot(df['Week'], df['price_per_KG'], label="Twiga Price")
+sns.lineplot(df['Week'], df['median_market_price'], label="Market Price")
+```
+
 ### Perform Train-Test Split and build model on it + Feature Importance
 - Model building is done after removing unneedded features in *predictors* as shown in the snippet below.
 ```
