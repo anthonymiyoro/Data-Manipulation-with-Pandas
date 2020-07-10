@@ -8,6 +8,13 @@ or - git remote set-url origin
 - git branch
 - git checkout feature/sales_predictor
 
+### Split dataframe based on value in one column
+```
+# Split dataframe based if [in or out] exists in the In/Out column and then concatenate
+in_df = df1[df1['In/Out'].str.contains('In', case=False)]
+out_df = df1[df1['In/Out'].str.contains('Out', case=False)]
+```
+
 ### Filter dataframe based on column values
 ```
 twiga_higher_df = df[(df.price_per_KG > df.median_market_price)]
