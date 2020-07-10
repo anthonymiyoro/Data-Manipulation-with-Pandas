@@ -1,7 +1,8 @@
 # Data-Manipulation-with-Pandas
 Tips and tricks when using data manipulation in Python and Pandas
 
-- git remote set-url origin
+- git remote add origin https://anthonymiyoro@bitbucket.org/twigatechteam/twiga-bi.git
+or - git remote set-url origin
 - git pull
 - git fetch --all
 - git branch
