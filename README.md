@@ -15,6 +15,13 @@ in_df = df1[df1['In/Out'].str.contains('In', case=False)]
 out_df = df1[df1['In/Out'].str.contains('Out', case=False)]
 ```
 
+### Drop column whose title contains string
+https://stackoverflow.com/a/44272830/4861086
+```
+df = df[df.columns.drop(list(df.filter(regex='Test')))]
+```
+
+
 ### Filter dataframe based on column values
 ```
 twiga_higher_df = df[(df.price_per_KG > df.median_market_price)]
