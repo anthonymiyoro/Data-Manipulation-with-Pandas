@@ -18,6 +18,20 @@ df.drop(df.iloc[:, 86:], inplace = True, axis=1)  # Drop all columns after the 8
 df.drop(df.index[3:5])  # Drop columns between the 3rd and 5th
 ```
 
+### Merge the values of 2 rows into a column_title string with a delimeter
+```
+tempereture_data.columns = (tempereture_data.loc[0].astype(str).values + ' - ' + tempereture_data.loc[1].astype(str).values)
+# tempereture_data = tempereture_data.reset_index(drop=True)
+
+```
+
+### Convert some columns into rows while leaving the rest
+```
+
+
+```
+
+
 ### Split dataframe based on value in one column
 ```
 # Split dataframe based if [in or out] exists in the In/Out column and then concatenate
