@@ -20,8 +20,8 @@ df.drop(df.index[3:5])  # Drop columns between the 3rd and 5th
 
 ### Merge the values of 2 rows into a column_title string with a delimeter
 ```
-tempereture_data.columns = (tempereture_data.loc[0].astype(str).values + ' - ' + tempereture_data.loc[1].astype(str).values)
-# tempereture_data = tempereture_data.reset_index(drop=True)
+df.columns = (df.loc[0].astype(str).values + ' - ' + df.loc[1].astype(str).values)
+# df = df.reset_index(drop=True)
 
 ```
 
