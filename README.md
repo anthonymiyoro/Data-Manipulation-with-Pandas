@@ -8,6 +8,9 @@ or - git remote set-url origin
 - git branch
 - git checkout feature/sales_predictor
 
+### Unmerge cells and fill in blanks using Excel
+https://www.ablebits.com/office-addins-blog/2018/03/07/unmerge-cells-excel/
+
 ### Split dataframe based on value in one column
 ```
 # Split dataframe based if [in or out] exists in the In/Out column and then concatenate
