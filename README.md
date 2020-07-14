@@ -22,6 +22,20 @@ twiga_lower_df = df[(df.price_per_KG < df.median_market_price)]
 twiga_equal_df = df[(df.price_per_KG == df.median_market_price)]
 ```
 
+### Turn Row into column header
+https://stackoverflow.com/a/26147330/4861086
+```
+ df.columns = df.iloc[1]
+```
+
+### Access column name while looping through row itertuples
+https://stackoverflow.com/a/43620031/4861086
+```
+for row in df.itertuples():
+    print(row.A)
+    print(row.Index)
+```
+
 ### Create calculated column from other columns pandas
 ```
 df['new_col'] = (df.col2/df.col3)
