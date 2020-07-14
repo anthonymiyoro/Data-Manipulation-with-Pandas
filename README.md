@@ -11,6 +11,13 @@ or - git remote set-url origin
 ### Unmerge cells and fill in blanks using Excel
 https://www.ablebits.com/office-addins-blog/2018/03/07/unmerge-cells-excel/
 
+### Drop all rows after Index Pandas dataframe OR drop rows within a given range Pandas dataframe
+```
+df.drop(df.iloc[:, 86:], inplace = True, axis=1)  # Drop all columns after the 86th
+
+df.drop(df.index[3:5])  # Drop columns between the 3rd and 5th
+```
+
 ### Split dataframe based on value in one column
 ```
 # Split dataframe based if [in or out] exists in the In/Out column and then concatenate
