@@ -25,10 +25,57 @@ df.columns = (df.loc[0].astype(str).values + ' - ' + df.loc[1].astype(str).value
 
 ```
 
-### Convert some columns into rows while leaving the rest
+### Convert some columns into rows while leaving the rest the way they are
+```
+# Initial DF
+
+	Employee details - Business Unit	Employee details - Full name	2020-07-01 00:00:00 - In	2020-07-01 00:00:00 - Out	2020-07-02 00:00:00 - In	2020-07-02 00:00:00 - Out	2020-07-03 00:00:00 - In	2020-07-03 00:00:00 - Out	2020-07-04 00:00:00 - In	2020-07-04 00:00:00 - Out	...	2020-07-27 00:00:00 - In	2020-07-28 00:00:00 - Out	2020-07-28 00:00:00 - In	2020-07-29 00:00:00 - OUT	2020-07-29 00:00:00 - In	2020-07-30 00:00:00 - Out	2020-07-30 00:00:00 - In	2020-07-31 00:00:00 - Out	2020-07-31 00:00:00 - In	2020-07-31 00:00:00 - Out
+2	Distribution	Paul Kang'ethe Kuria	36.5	36.4	37.2	36.4	36.4	36.7	35.1	36.7	...	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN
+3	Commercial	Samson Musyoka	35.7	36.7	37	36.7	36.7	35.7	35.6	36.4	...	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN
+4	Deport Clerk	Sylvester Ngesa	36.2	36.7	36	36.7	36.7	36.5	35.9	36.2	...	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN
+5	Fullfiller	James Mwendwa	36.7	36.5	36.7	36.5	36.5	36.2	36.6	36.7	...	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN
+6	Offloader	Nicholas Kyalo	35.9	36.4	36.2	36.4	36.4	36.6	35.8	36.5	...	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN	NaN
+5 rows × 60 columns
+
+```
+https://stackoverflow.com/a/28654127/4861086
+```
+# Code Snippet
+df1 = df1.melt(id_vars=["Employee details - Business Unit", "Employee details - Full name"], 
+        var_name="Date", 
+        value_name="Value")
+```
+Result:
+```
+	Employee details - Business Unit	Employee details - Full name	Date	Value
+0	DISTRIBUTION	John Gatere	2020-07-01 00:00:00 - In	35.9
+1	DISTRIBUTION	Daniel Musyoka	2020-07-01 00:00:00 - In	34.9
+2	Waiyaki Way	Abisai Elia Muthoni	2020-07-01 00:00:00 - In	35.1
 ```
 
+### Split one pandas column into two different columns based on delimeter
 
+```
+# Before
+
+	Employee details - Business Unit	Employee details - Full name	Date	Value
+0	DISTRIBUTION	John Gatere	2020-07-01 00:00:00 - In	35.9
+1	DISTRIBUTION	Daniel Musyoka	2020-07-01 00:00:00 - In	34.9
+2	Waiyaki Way	Abisai Elia Muthoni	2020-07-01 00:00:00 - In	35.1
+```
+
+```
+# Split Column Into 2
+
+df1[['Date','In/Out']] = df1.Date.str.split(" - ",expand=True)
+df1.head()
+```
+```
+# After
+	Employee details - Business Unit	Employee details - Full name	Date	Value	In/Out
+0	Distribution	Paul Kang'ethe Kuria	2020-07-01 00:00:00	36.5	In
+1	Commercial	Samson Musyoka	2020-07-01 00:00:00	35.7	In
+2	Deport Clerk	Sylvester Ngesa	2020-07-01 00:00:00	36.2	In
 ```
 
 
