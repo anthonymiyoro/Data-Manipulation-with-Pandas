@@ -8,6 +8,12 @@ or - git remote set-url origin
 - git branch
 - git checkout feature/sales_predictor
 
+### Create dataframe based on dataframe index
+https://stackoverflow.com/a/53482813/4861086
+```
+Filter_df  = df[df.index.isin(my_list)]
+```
+
 ### Unmerge cells and fill in blanks using Excel
 https://www.ablebits.com/office-addins-blog/2018/03/07/unmerge-cells-excel/
 
