@@ -62,7 +62,7 @@ Before
 1	DISTRIBUTION	Daniel Musyoka	2020-07-01 00:00:00 - In	34.9
 2	Waiyaki Way	Abisai Elia Muthoni	2020-07-01 00:00:00 - In	35.1
 ```
-
+https://cmdlinetips.com/2018/11/how-to-split-a-text-column-in-pandas/
 ```
 # Split Column Into 2
 
