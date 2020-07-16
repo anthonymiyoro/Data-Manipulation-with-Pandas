@@ -77,6 +77,11 @@ After
 2	Deport Clerk	Sylvester Ngesa	2020-07-01 00:00:00	36.2	In
 ```
 
+### Create column and fill it in with particular value
+https://stackoverflow.com/a/34811984/4861086
+```
+df['A'] = 'foo'
+```
 
 ### Split dataframe based on value in one column
 ```
@@ -85,14 +90,49 @@ in_df = df1[df1['In/Out'].str.contains('In', case=False)]
 out_df = df1[df1['In/Out'].str.contains('Out', case=False)]
 ```
 
-### Drop column whose title contains string
+### Drop all rows that have NaN as a value in a certain column pandas
+https://stackoverflow.com/a/13413845/4861086
+```
+df = df[df['EPS'].notna()]
+```
+
+### Turn distinct column values into column titles pandas
+before
+```
+    key       val
+id
+2   foo   oranges
+2   bar   bananas
+2   baz    apples
+3   foo    grapes
+3   bar     kiwis
+```
+after
+```
+key      bar     baz      foo
+id                           
+2    bananas  apples  oranges
+3      kiwis     NaN   grapes
+```
+https://stackoverflow.com/a/26256360/4861086
+```
+>>> df.reset_index().groupby(['id', 'key'])['val'].aggregate('first').unstack()
+```
+
+### Delete columns that end with certain text pandas
+https://stackoverflow.com/a/46346235/4861086
+```
+df1 = df.loc[:, ~df.columns.str.endswith('Name')]
+```
+
+### Drop column whose title contains string pandas
 https://stackoverflow.com/a/44272830/4861086
 ```
 df = df[df.columns.drop(list(df.filter(regex='Test')))]
 ```
 
 
-### Filter dataframe based on column values
+### Filter dataframe based on column values pandas
 ```
 twiga_higher_df = df[(df.price_per_KG > df.median_market_price)]
 twiga_lower_df = df[(df.price_per_KG < df.median_market_price)]
