@@ -26,6 +26,7 @@ df.columns = (df.loc[0].astype(str).values + ' - ' + df.loc[1].astype(str).value
 ```
 
 ### Convert some columns into rows while leaving the rest the way they are
+Before:
 ```
 # Initial DF
 
@@ -45,7 +46,7 @@ df1 = df1.melt(id_vars=["Employee details - Business Unit", "Employee details - 
         var_name="Date", 
         value_name="Value")
 ```
-Result:
+After:
 ```
 	Employee details - Business Unit	Employee details - Full name	Date	Value
 0	DISTRIBUTION	John Gatere	2020-07-01 00:00:00 - In	35.9
@@ -54,10 +55,8 @@ Result:
 ```
 
 ### Split one pandas column into two different columns based on delimeter
-
+Before
 ```
-# Before
-
 	Employee details - Business Unit	Employee details - Full name	Date	Value
 0	DISTRIBUTION	John Gatere	2020-07-01 00:00:00 - In	35.9
 1	DISTRIBUTION	Daniel Musyoka	2020-07-01 00:00:00 - In	34.9
@@ -70,8 +69,8 @@ Result:
 df1[['Date','In/Out']] = df1.Date.str.split(" - ",expand=True)
 df1.head()
 ```
+After
 ```
-# After
 	Employee details - Business Unit	Employee details - Full name	Date	Value	In/Out
 0	Distribution	Paul Kang'ethe Kuria	2020-07-01 00:00:00	36.5	In
 1	Commercial	Samson Musyoka	2020-07-01 00:00:00	35.7	In
