@@ -248,7 +248,7 @@ sns.lineplot(df['Year'],df['Sold Units'])
 ```
 
 
-### Loop through dataframe while extracting value from each row and wrting to another
+### Loop rows in specific columns in 2 dataframes while extracting value from a row and wrting to another Pandas Dataframe
 - Loop through 1st dataframe
 - initiate variable
 - Loop through 2nd dataframe
