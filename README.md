@@ -14,6 +14,12 @@ https://stackoverflow.com/a/53482813/4861086
 Filter_df  = df[df.index.isin(my_list)]
 ```
 
+### Replace NaN Values with Zeros in Pandas DataFrame
+- For a single column using pandas: df['DataFrame Column'] = df['DataFrame Column'].fillna(0)
+- For a single column using numpy: df['DataFrame Column'] = df['DataFrame Column'].replace(np.nan, 0)
+- For an entire DataFrame using pandas: df.fillna(0)
+- For an entire DataFrame using numpy: df.replace(np.nan,0)
+
 ### Unmerge cells and fill in blanks using Excel
 https://www.ablebits.com/office-addins-blog/2018/03/07/unmerge-cells-excel/
 
