@@ -8,6 +8,10 @@ or - git remote set-url origin
 - git branch
 - git checkout feature/sales_predictor
 
+### Predict value random forest XG Boost
+https://medium.com/@oemer.aslantas/forecasting-sales-units-with-random-forest-regression-on-python-a75d92910b46
+https://medium.com/@oemer.aslantas/a-real-world-example-of-predicting-sales-volume-using-xgboost-with-gridsearch-on-a-jupyternotebook-c6587506128d
+
 ### Create dataframe based on dataframe index
 https://stackoverflow.com/a/53482813/4861086
 ```
