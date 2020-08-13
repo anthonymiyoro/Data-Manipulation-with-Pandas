@@ -8,6 +8,9 @@ or - git remote set-url origin
 - git branch
 - git checkout feature/sales_predictor
 
+### Create distance matrix between lats and longs pandas dataframe
+https://kanoki.org/2019/12/27/how-to-calculate-distance-in-python-and-pandas-using-scipy-spatial-and-distance-functions/
+
 ### Predict value random forest XG Boost
 https://medium.com/@oemer.aslantas/forecasting-sales-units-with-random-forest-regression-on-python-a75d92910b46
 https://medium.com/@oemer.aslantas/a-real-world-example-of-predicting-sales-volume-using-xgboost-with-gridsearch-on-a-jupyternotebook-c6587506128d
