@@ -8,6 +8,9 @@ or - git remote set-url origin
 - git branch
 - git checkout feature/sales_predictor
 
+### Run function on all rows in dataframe df.apply()
+http://jonathansoma.com/lede/foundations/classes/pandas%20columns%20and%20functions/apply-a-function-to-every-row-in-a-pandas-dataframe/
+
 ### Create distance matrix between lats and longs pandas dataframe
 https://kanoki.org/2019/12/27/how-to-calculate-distance-in-python-and-pandas-using-scipy-spatial-and-distance-functions/
 
