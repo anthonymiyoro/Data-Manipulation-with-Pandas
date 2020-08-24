@@ -8,7 +8,11 @@ or - git remote set-url origin
 - git branch
 - git checkout feature/sales_predictor
 
-### Rename pandas column
+
+### Forecast sales
+https://www.kaggle.com/cdabakoglu/time-series-forecasting-arima-lstm-prophet
+
+### One-Hot-Encode Pandas dataframe
 https://stackabuse.com/one-hot-encoding-in-python-with-pandas-and-scikit-learn/
 ```
 y = pd.get_dummies(df.Countries, prefix='Country')
