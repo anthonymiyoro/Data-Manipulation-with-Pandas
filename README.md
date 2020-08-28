@@ -11,6 +11,7 @@ or - git remote set-url origin
 
 ### Forecast sales
 https://www.kaggle.com/cdabakoglu/time-series-forecasting-arima-lstm-prophet
+https://www.datacamp.com/community/tutorials/xgboost-in-python
 
 ### One-Hot-Encode Pandas dataframe
 https://stackabuse.com/one-hot-encoding-in-python-with-pandas-and-scikit-learn/
