@@ -21,6 +21,34 @@ print(y.head())
 
 ### Run function on all rows in dataframe df.apply()
 http://jonathansoma.com/lede/foundations/classes/pandas%20columns%20and%20functions/apply-a-function-to-every-row-in-a-pandas-dataframe/
+```
+
+height	width
+0	40.0	10
+1	20.0	9
+2	3.4	4
+
+# Use the height and width to calculate the area
+def calculate_area(row):
+    return row['height'] * row['width']
+
+rectangles_df.apply(calculate_area, axis=1)
+
+
+0    400.0
+1    180.0
+2     13.6
+dtype: float64
+
+# Use .apply to save the new column if we'd like
+rectangles_df['area'] = rectangles_df.apply(calculate_area, axis=1)
+
+rectangles_df
+height	width	area
+0	40.0	10	400.0
+1	20.0	9	180.0
+2	3.4	4	13.6
+```
 
 ### Create distance matrix between lats and longs pandas dataframe
 https://kanoki.org/2019/12/27/how-to-calculate-distance-in-python-and-pandas-using-scipy-spatial-and-distance-functions/
