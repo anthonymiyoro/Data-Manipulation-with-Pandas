@@ -19,6 +19,21 @@ y = pd.get_dummies(df.Countries, prefix='Country')
 print(y.head())
 ```
 
+### Delete rows from Pandas dataframe based on column value
+https://stackoverflow.com/questions/38862587/pandas-dataframe-drop-all-the-rows-based-one-column-value-with-python
+
+```
+df[df["name"] != 'tom']
+
+ or 
+
+df[~df['name'].str.contains('tom')]
+
+To remove on multiple criteria  -- "~" is return opposite of True/False
+
+df2[~(df2["name"].isin(['tom','lucy']))]
+```
+
 ### Run function on all rows in dataframe df.apply()
 http://jonathansoma.com/lede/foundations/classes/pandas%20columns%20and%20functions/apply-a-function-to-every-row-in-a-pandas-dataframe/
 ```
