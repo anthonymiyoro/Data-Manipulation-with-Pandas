@@ -9,6 +9,20 @@ or - git remote set-url origin
 - git checkout feature/sales_predictor
 
 
+### Rearange columns in dataframe
+https://stackoverflow.com/questions/35321812/move-column-in-pandas-dataframe/35322540
+```
+  a  b   x  y
+0  1  2   3 -1
+1  2  4   6 -2
+2  3  6   9 -3
+3  4  8  12 -4
+```
+
+```
+df = df[['a', 'y', 'b', 'x']]
+```
+
 ### Forecast sales
 https://www.kaggle.com/cdabakoglu/time-series-forecasting-arima-lstm-prophet
 https://www.datacamp.com/community/tutorials/xgboost-in-python
