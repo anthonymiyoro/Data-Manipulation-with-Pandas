@@ -23,6 +23,12 @@ https://stackoverflow.com/questions/35321812/move-column-in-pandas-dataframe/353
 df = df[['a', 'y', 'b', 'x']]
 ```
 
+### Group by and Sum Pandas
+https://stackoverflow.com/questions/39922986/pandas-group-by-and-sum
+```
+df.groupby(['Fruit','Name']).sum()
+```
+
 ### Forecast sales
 https://www.kaggle.com/cdabakoglu/time-series-forecasting-arima-lstm-prophet
 https://www.datacamp.com/community/tutorials/xgboost-in-python
