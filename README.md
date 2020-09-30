@@ -1,7 +1,7 @@
 # Data-Manipulation-with-Pandas
 Tips and tricks when using data manipulation in Python and Pandas
 
-- git remote add origin https://anthonymiyoro@bitbucket.org/twigatechteam/twiga-bi.git
+- git remote add origin bitbucket.giturladdress
 or - git remote set-url origin
 - git pull
 - git fetch --all
@@ -231,9 +231,9 @@ df = df[df.columns.drop(list(df.filter(regex='Test')))]
 
 ### Filter dataframe based on column values pandas
 ```
-twiga_higher_df = df[(df.price_per_KG > df.median_market_price)]
-twiga_lower_df = df[(df.price_per_KG < df.median_market_price)]
-twiga_equal_df = df[(df.price_per_KG == df.median_market_price)]
+higher_df = df[(df.price_per_KG > df.median_market_price)]
+lower_df = df[(df.price_per_KG < df.median_market_price)]
+equal_df = df[(df.price_per_KG == df.median_market_price)]
 ```
 
 ### Turn Row into column header
@@ -261,7 +261,7 @@ import seaborn as sns
 
 # Week Trends
 sns.set(rc={'figure.figsize': (19, 8)})
-sns.lineplot(df['Week'], df['price_per_KG'], label="Twiga Price")
+sns.lineplot(df['Week'], df['price_per_KG'], label="Our Price")
 sns.lineplot(df['Week'], df['median_market_price'], label="Market Price")
 ```
 
