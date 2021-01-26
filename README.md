@@ -1258,7 +1258,49 @@ two  4   5   6
 df = df.reset_index()
 ```
 
-### Fill in Nan with 0
+### Fill in Nan with 0 / Fill in all blank cells with value pandas
 ```
 df.fillna(0)
+```
+
+### Append 1 dataframe to the bottom of another
+```
+final_df = final_df.append(full_df)
+```
+
+### Delete Column if 1st row has a value
+
+https://stackoverflow.com/questions/42377344/drop-multiple-columns-based-on-different-values-in-first-row-of-dataframe
+```
+mask = df.iloc[0].isin(['Apples','Pears'])
+```
+```
+print (mask)
+Fav-fruit     True
+Unnamed1     False
+Unnamed2      True
+Cost         False
+Purchsd?     False
+Unnamed3     False
+Name: 0, dtype: bool
+```
+```
+print (~mask)
+Fav-fruit    False
+Unnamed1      True
+Unnamed2     False
+Cost          True
+Purchsd?      True
+Unnamed3      True
+Name: 0, dtype: bool
+```
+```
+print (df.loc[:, ~mask])
+```
+```
+  Unnamed1  Cost Purchsd? Unnamed3
+0  Bananas   NaN      Yes       No
+1      NaN   0.1      NaN       No
+2      NaN   0.3      NaN       No
+3      NaN   0.1      Yes      NaN
 ```
