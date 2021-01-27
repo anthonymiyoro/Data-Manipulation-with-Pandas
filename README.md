@@ -1304,3 +1304,16 @@ print (df.loc[:, ~mask])
 2      NaN   0.3      NaN       No
 3      NaN   0.1      Yes      NaN
 ```
+
+### Collect data recieved from a request flask
+https://stackoverflow.com/questions/10434599/get-the-data-received-in-a-flask-request
+
+```
+# REST Handler
+@app.route('/recommend', methods=['POST'])
+def collect_test_results():
+    if request.method == 'POST':
+        Student_Name = request.values.getlist('Student_Name') # Name of the student
+        Video_Name = request.values.getlist('Video_Name') # Name of the video
+        Is_correct = request.values.getlist('Is_correct') # Whether or not the video is correct
+```
