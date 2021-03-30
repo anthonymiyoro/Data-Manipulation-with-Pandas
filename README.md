@@ -1336,3 +1336,27 @@ def collect_test_results():
         Video_Name = request.values.getlist('Video_Name') # Name of the video
         Is_correct = request.values.getlist('Is_correct') # Whether or not the video is correct
 ```
+
+### Import file that is in another folder python
+https://stackoverflow.com/a/46569406/4861086
+
+```
+Since the application folder structure is fixed, we can use os.path to get the full path of the module we wish to import. For example, if this is the structure:
+
+/home/me/application/app2/some_folder/vanilla.py
+/home/me/application/app2/another_folder/mango.py
+And let's say that you want to import the mango module. You could do the following in vanilla.py:
+
+import sys, os.path
+mango_dir = (os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
++ '/another_folder/')
+sys.path.append(mango_dir)
+import mango
+```
+
+OR FROM JUST A SUB-FOLDER 
+```
+models_dir = (os.path.abspath(os.path.join(os.path.dirname(__file__) + '/models/')))
+sys.path.append(models_dir)
+import models # models.py
+```
