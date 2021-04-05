@@ -8,6 +8,33 @@ or - git remote set-url origin
 - git branch
 - git checkout feature/sales_predictor
 
+### Import function from parent folders __init__.py file
+https://stackoverflow.com/questions/38955895/import-variable-from-parent-directory-in-python-package
+
+```
+import sys, os.path
+sys.path.append(os.path.abspath('../'))
+from app import db
+```
+
+Replace app with name of parent folder
+
+### Import functions from child folders (model_admins.py in this case, this import is in the __init__.py file)
+```
+models_dir = (os.path.abspath(os.path.join(os.path.dirname(__file__) + '/models/')))
+sys.path.append(models_dir)
+
+from model_admins import VideoFileModelView, FacePhotoModelView, VideoHashListModelView, ScreenshotPhotoModelView # Import models admin pages
+```
+app/
+├── __init__.py
+├── models
+│   ├── __pycache__
+│   │   ├── __init__.cpython-39.pyc
+│   │   ├── model_admins.cpython-39.pyc
+│   │   └── models.cpython-39.pyc
+│   ├── model_admins.py
+│   └── models.py
 
 ### Rearange columns in dataframe
 https://stackoverflow.com/questions/35321812/move-column-in-pandas-dataframe/35322540
