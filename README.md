@@ -8,6 +8,20 @@ or - git remote set-url origin
 - git branch
 - git checkout feature/sales_predictor
 
+### Connect to Google Cloud MYSQL 
+https://github.com/GoogleCloudPlatform/getting-started-python/issues/129
+```
+I experienced this issue when running a flask app locally against a remote CloudSQL db instance (using cloud_sql_proxy). My SQLALCHEMY_DATABASE_URI Connection looked like:
+
+mysql+pymysql://{<user-name}:{<user-password>}@{<db-hostname>}/{<database-name>}?unix_socket=/cloudsql/{<connection-name>}
+
+Turns out connections to CloudSQL can only use either TCP or unix socket, not both. Apparently the proxy uses TCP connection
+
+Solution: remove "unix_socket" param when running locally against the live URI so it looks like this:
+
+mysql+pymysql://{<user-name}:{<user-password>}@{<db-hostname>}/{<database-name>}
+```
+
 ### Import function from parent folders __init__.py file
 https://stackoverflow.com/questions/38955895/import-variable-from-parent-directory-in-python-package
 
@@ -26,6 +40,8 @@ sys.path.append(models_dir)
 
 from model_admins import VideoFileModelView, FacePhotoModelView, VideoHashListModelView, ScreenshotPhotoModelView # Import models admin pages
 ```
+FILE STRUCTURE
+```
 app/
 ├── __init__.py
 ├── models
@@ -35,6 +51,7 @@ app/
 │   │   └── models.cpython-39.pyc
 │   ├── model_admins.py
 │   └── models.py
+```
 
 ### Rearange columns in dataframe
 https://stackoverflow.com/questions/35321812/move-column-in-pandas-dataframe/35322540
