@@ -25,6 +25,8 @@ mysql+pymysql://{<user-name}:{<user-password>}@{<db-hostname>}/{<database-name>}
 ### Import function from parent folders __init__.py file
 https://stackoverflow.com/questions/38955895/import-variable-from-parent-directory-in-python-package
 
+https://chrisyeh96.github.io/2017/08/08/definitive-guide-python-imports.html
+
 ```
 import sys, os.path
 sys.path.append(os.path.abspath('../'))
