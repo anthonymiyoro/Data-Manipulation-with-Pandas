@@ -8,6 +8,10 @@ or - git remote set-url origin
 - git branch
 - git checkout feature/sales_predictor
 
+### Install redis-docker
+https://kb.objectrocket.com/redis/how-to-install-redis-on-ubuntu-using-docker-505
+https://www.youtube.com/watch?v=3muR5gB8x2o&t=402s
+
 ### Connect to Google Cloud MYSQL 
 https://github.com/GoogleCloudPlatform/getting-started-python/issues/129
 ```
